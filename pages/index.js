@@ -50,11 +50,22 @@ export default function Home() {
   if (!stats || !stats.postsPerHour) return <div>No data available.</div>;
 
   return (
-    <main style={{ maxWidth: 900, margin: '0 auto', padding: 24 }}>
-      <h1 style={{ fontSize: 36, fontWeight: 'bold', marginBottom: 12, letterSpacing: '-0.5px' }}>
-        Accelerating Universal Mental Health Access Through AI-Powered Suicide Prevention
-      </h1>
-      <section style={{ marginBottom: 24, background: '#f6f8fa', borderRadius: 8, padding: 16, boxShadow: '0 1px 4px #eee' }}>
+    <>
+      {/* Responsive meta tag for mobile */}
+      <style>{`
+        @media (max-width: 600px) {
+          .dashboard-main { padding: 8px !important; }
+          .dashboard-row { flex-direction: column !important; gap: 16px !important; }
+          .dashboard-col { min-width: 0 !important; width: 100% !important; }
+          .dashboard-title { font-size: 22px !important; }
+          .dashboard-section { padding: 10px !important; }
+        }
+      `}</style>
+      <main className="dashboard-main" style={{ maxWidth: 900, margin: '0 auto', padding: 24 }}>
+        <h1 className="dashboard-title" style={{ fontSize: 36, fontWeight: 'bold', marginBottom: 12, letterSpacing: '-0.5px' }}>
+          Accelerating Universal Mental Health Access Through AI-Powered Suicide Prevention
+        </h1>
+      <section className="dashboard-section" style={{ marginBottom: 24, background: '#f6f8fa', borderRadius: 8, padding: 16, boxShadow: '0 1px 4px #eee' }}>
         <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', gap: 32, fontSize: 16, marginBottom: 6 }}>
           <span style={{ fontWeight: 'bold' }}>Lead:</span> <span style={{ fontWeight: 'normal', marginRight: 24 }}>
             <a href="https://ihozh.github.io/" target="_blank" rel="noopener noreferrer" style={{ color: '#1976d2', textDecoration: 'none' }}>Yihe Zhang</a>
@@ -71,7 +82,7 @@ export default function Home() {
       </section>
 
       <h2 style={{ margin: '24px 0 14px 0', fontWeight: 600, fontSize: 20, letterSpacing: '0.01em' }}>Data Collection Progress (Live)</h2>
-      <div style={{ display: 'flex', flexDirection: 'row', gap: 32 }}>
+      <div className="dashboard-row" style={{ display: 'flex', flexDirection: 'row', gap: 32 }}>
         <div style={{ flex: 1, minWidth: 0 }}>
           <h3 style={{ fontSize: 16, fontWeight: 600, marginBottom: 8 }}>Posts Captured Per Hour</h3>
           <Chart
@@ -111,6 +122,7 @@ export default function Home() {
         <li>Report on the Competition Results</li>
       </ul>
     </main>
+    </>
   );
 }
 
