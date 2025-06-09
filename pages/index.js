@@ -5,26 +5,13 @@ import { useEffect, useState } from 'react';
 import Chart from '../components/Chart';
 
 // Helper: filter per-hour data to only the last 24 hours
-// Helper: get Central Time (US), DST-aware, from a Date
-function getCentralTime(date = new Date()) {
-  // Central Time is UTC-6 or UTC-5 (during DST)
-  const jan = new Date(date.getFullYear(), 0, 1);
-  const jul = new Date(date.getFullYear(), 6, 1);
-  const stdTimezoneOffset = Math.max(jan.getTimezoneOffset(), jul.getTimezoneOffset());
-  const isDST = date.getTimezoneOffset() < stdTimezoneOffset;
-  // Central Standard Time is UTC-6, Central Daylight Time is UTC-5
-  const offset = isDST ? 5 : 6;
-  // convert to UTC, then subtract offset
-  return new Date(date.getTime() + ((date.getTimezoneOffset() / 60 - offset) * 60 * 60 * 1000));
-}
-
-// Helper: filter per-hour data to only the last 24 hours in US Central Time
+// Helper: filter per-hour data to only the last 24 hours using system time
 function getLast24Hours(data, nowStr) {
   if (!Array.isArray(data) || data.length === 0) return [];
-  const now = nowStr ? getCentralTime(new Date(nowStr)) : getCentralTime();
+  const now = nowStr ? new Date(nowStr) : new Date();
   const cutoff = new Date(now.getTime() - 24 * 60 * 60 * 1000);
   return data.filter(item => {
-    const d = getCentralTime(new Date(item.hour));
+    const d = new Date(item.hour);
     return d >= cutoff && d <= now;
   });
 }
