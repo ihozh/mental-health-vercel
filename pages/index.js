@@ -67,7 +67,7 @@ export default function Home() {
         <div><b>Contact:</b> <a href="mailto:yihe.zhang@louisiana.edu">yihe.zhang@louisiana.edu</a></div>
       </section>
       <section style={{ marginBottom: 32 }}>
-        <span>Now: {stats.now}</span>
+        <span>Last Updated: {stats.now}</span>
       </section>
 
       <h2 style={{ margin: '24px 0 14px 0', fontWeight: 600, fontSize: 20, letterSpacing: '0.01em' }}>Data Collection Progress (Live)</h2>
