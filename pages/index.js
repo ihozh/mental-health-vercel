@@ -5,12 +5,14 @@ import { useEffect, useState } from 'react';
 import Chart from '../components/Chart';
 
 // Helper: filter per-hour data to only the last 24 hours
+// Helper: filter per-hour data to only the last 24 hours in US Central Time
 function getLast24Hours(data, nowStr) {
   if (!Array.isArray(data) || data.length === 0) return [];
-  const now = nowStr ? new Date(nowStr) : new Date();
+  // Use America/Chicago (Central Time)
+  const now = nowStr ? new Date(new Date(nowStr).toLocaleString('en-US', { timeZone: 'America/Chicago' })) : new Date(new Date().toLocaleString('en-US', { timeZone: 'America/Chicago' }));
   const cutoff = new Date(now.getTime() - 24 * 60 * 60 * 1000);
   return data.filter(item => {
-    const d = new Date(item.hour);
+    const d = new Date(new Date(item.hour).toLocaleString('en-US', { timeZone: 'America/Chicago' }));
     return d >= cutoff && d <= now;
   });
 }
