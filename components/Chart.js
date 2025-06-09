@@ -42,19 +42,23 @@ export default function Chart({ data, label, color }) {
       title: { display: false },
     },
     scales: {
+      y: {
+        beginAtZero: true,
+        ticks: {
+          display: true,
+          color: '#444',
+        },
+      },
       x: {
         grid: { display: false },
         ticks: {
           callback: function(value, index, ticks) {
-            // Show every 4th label for hourly data (labels like '06-08 00', '06-08 04', ...)
             const label = this.getLabelForValue(value);
-            // If label is in 'MM-DD HH' format, only show every 4th hour
-            if (/\d{2}-\d{2} \d{2}/.test(label)) {
-              const hour = parseInt(label.slice(-2), 10);
-              return hour % 4 === 0 ? label : '';
-            }
-            // For daily or other labels, show all
-            return label;
+            // Always show first and last label
+            if (index === 0 || index === ticks.length - 1) return label;
+            // Show every 4th bar
+            if (index % 4 === 0) return label;
+            return '';
           }
         }
       },
