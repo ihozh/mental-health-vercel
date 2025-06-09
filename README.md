@@ -1,6 +1,7 @@
 # Mental Health Project
 
 A web application focused on mental health resources and support.
+Updated on 2025-06-08
 
 ## Description
 
