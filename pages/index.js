@@ -1,7 +1,7 @@
 // export default function Test() {
 //   return <div>Hello from index.js</div>
 // }
-import { useEffect, useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Chart from '../components/Chart';
 
 // Helper: filter per-hour data to only the last 24 hours
@@ -15,6 +15,7 @@ function getLast24Hours(data, nowStr) {
     return d >= cutoff && d <= now;
   });
 }
+
 
 export default function Home() {
   const [stats, setStats] = useState(null);
@@ -81,6 +82,16 @@ export default function Home() {
       <section style={{ marginBottom: 32 }}>
         <span>Last Updated: {new Date(stats.now).toLocaleString()}</span>
       </section>
+
+      {/* Login Button */}
+      <div style={{ display: 'flex', justifyContent: 'center', marginBottom: 16 }}>
+        <button
+          style={{ padding: '8px 18px', fontSize: 16, background: '#1976d2', color: '#fff', border: 'none', borderRadius: 6, cursor: 'pointer' }}
+          onClick={() => window.location.href = '/login'}
+        >
+          Login
+        </button>
+      </div>
 
       <h2 style={{ margin: '24px 0 14px 0', fontWeight: 600, fontSize: 20, letterSpacing: '0.01em' }}>Data Collection Progress (Live)</h2>
       <div className="dashboard-row" style={{ display: 'flex', flexDirection: 'row', gap: 32 }}>
