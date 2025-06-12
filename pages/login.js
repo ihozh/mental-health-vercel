@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useRouter } from 'next/router';
 
 export default function Login() {
@@ -7,6 +7,16 @@ export default function Login() {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState('');
   const router = useRouter();
+
+  // If already logged in, redirect to /labelling
+  useEffect(() => {
+    if (typeof window !== 'undefined') {
+      const username = localStorage.getItem('username');
+      if (username && username.trim() !== '') {
+        router.replace('/labelling');
+      }
+    }
+  }, [router]);
 
   async function handleSubmit(e) {
     e.preventDefault();
