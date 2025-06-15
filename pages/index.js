@@ -53,6 +53,15 @@ export default function Home() {
 
   return (
     <>
+      {/* Top Bar with Login Button */}
+      <div style={{ width: '100%', background: '#ce181e', color: '#fff', padding: '8px 0', textAlign: 'center', fontWeight: 600, fontSize: 18, letterSpacing: '0.5px', boxShadow: '0 2px 8px #eee', zIndex: 100, display: 'flex', justifyContent: 'flex-end', alignItems: 'center', minHeight: 48 }}>
+        <button
+          style={{ marginRight: 32, padding: '8px 18px', fontSize: 16, background: '#fff', color: '#ce181e', border: 'none', borderRadius: 6, cursor: 'pointer', fontWeight: 600, boxShadow: '0 1px 4px #bdbdbd' }}
+          onClick={() => window.location.href = '/login'}
+        >
+          Login
+        </button>
+      </div>
       {/* Responsive meta tag for mobile */}
       <style>{`
         @media (max-width: 600px) {
@@ -83,15 +92,6 @@ export default function Home() {
         <span>Last Updated: {new Date(stats.now).toLocaleString()}</span>
       </section>
 
-      {/* Login Button */}
-      <div style={{ display: 'flex', justifyContent: 'center', marginBottom: 16 }}>
-        <button
-          style={{ padding: '8px 18px', fontSize: 16, background: '#1976d2', color: '#fff', border: 'none', borderRadius: 6, cursor: 'pointer' }}
-          onClick={() => window.location.href = '/login'}
-        >
-          Login
-        </button>
-      </div>
 
       <h2 style={{ margin: '24px 0 14px 0', fontWeight: 600, fontSize: 20, letterSpacing: '0.01em' }}>Data Collection Progress (Live)</h2>
       <div className="dashboard-row" style={{ display: 'flex', flexDirection: 'row', gap: 32 }}>
@@ -133,6 +133,17 @@ export default function Home() {
         <li>Organize the Competition</li>
         <li>Report on the Competition Results</li>
       </ul>
+      {/* Acknowledgement Subsection */}
+      <h2 style={{ margin: '18px 0 10px 0', fontWeight: 600, fontSize: 20, letterSpacing: '0.01em' }}>Acknowledgement</h2>
+      <section style={{ background: '#f6f8fa', borderRadius: 8, padding: '8px 16px 16px 16px', boxShadow: '0 1px 4px #eee', marginBottom: 24 }}>
+        <div style={{ fontSize: 16, color: '#333', marginBottom: 16, marginTop: 0 }}>
+          This project is supported by the Informatics Research Institute, University of Louisiana at Lafayette. Special thanks to all contributors and advisors.
+        </div>
+        <div style={{ display: 'flex', gap: 32, alignItems: 'center', justifyContent: 'center', marginTop: 10 }}>
+          <img src="/ull.png" alt="ULL Logo" style={{ height: 150, objectFit: 'contain' }} />
+          <img src="/nsf.png" alt="NSF Logo" style={{ height: 150, objectFit: 'contain' }} />
+        </div>
+      </section>
     </main>
     </>
   );
