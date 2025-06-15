@@ -70,9 +70,11 @@ export default function Home() {
           .dashboard-col { min-width: 0 !important; width: 100% !important; }
           .dashboard-title { font-size: 22px !important; }
           .dashboard-section { padding: 10px !important; }
+          .ack-logo { height: 70px !important; }
         }
+        .ack-logo { height: 150px; object-fit: contain; }
       `}</style>
-      <main className="dashboard-main" style={{ maxWidth: 900, margin: '0 auto', padding: 24 }}>
+      <main className="dashboard-main" style={{ width: '100%', maxWidth: 900, margin: '0 auto', padding: 24, minHeight: '100vh' }}>
         <h1 className="dashboard-title" style={{ fontSize: 36, fontWeight: 'bold', marginBottom: 12, letterSpacing: '-0.5px' }}>
           Accelerating Universal Mental Health Access Through AI-Powered Suicide Prevention
         </h1>
@@ -140,8 +142,8 @@ export default function Home() {
           This project is supported by the Informatics Research Institute, University of Louisiana at Lafayette. Special thanks to all contributors and advisors.
         </div>
         <div style={{ display: 'flex', gap: 32, alignItems: 'center', justifyContent: 'center', marginTop: 10 }}>
-          <img src="/ull.png" alt="ULL Logo" style={{ height: 150, objectFit: 'contain' }} />
-          <img src="/nsf.png" alt="NSF Logo" style={{ height: 150, objectFit: 'contain' }} />
+          <img src="/ull.png" alt="ULL Logo" className="ack-logo" />
+          <img src="/nsf.png" alt="NSF Logo" className="ack-logo" />
         </div>
       </section>
     </main>
