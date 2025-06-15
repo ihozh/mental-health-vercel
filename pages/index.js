@@ -54,7 +54,14 @@ export default function Home() {
   return (
     <>
       {/* Top Bar with Login Button */}
-      <div style={{ width: '100%', background: '#ce181e', color: '#fff', padding: '8px 0', textAlign: 'center', fontWeight: 600, fontSize: 18, letterSpacing: '0.5px', boxShadow: '0 2px 8px #eee', zIndex: 100, display: 'flex', justifyContent: 'flex-end', alignItems: 'center', minHeight: 48 }}>
+      <style>{`
+        html, body {
+          margin: 0;
+          padding: 0;
+          overscroll-behavior: none;
+        }
+      `}</style>
+      <div style={{ width: '100%', background: '#ce181e', color: '#fff', padding: '8px 0', margin: 0, textAlign: 'center', fontWeight: 600, fontSize: 18, letterSpacing: '0.5px', boxShadow: '0 2px 8px #eee', zIndex: 100, display: 'flex', justifyContent: 'flex-end', alignItems: 'center', minHeight: 48 }}>
         <button
           style={{ marginRight: 32, padding: '8px 18px', fontSize: 16, background: '#fff', color: '#ce181e', border: 'none', borderRadius: 6, cursor: 'pointer', fontWeight: 600, boxShadow: '0 1px 4px #bdbdbd' }}
           onClick={() => window.location.href = '/login'}
