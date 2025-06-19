@@ -61,7 +61,7 @@ export default function Home() {
           overscroll-behavior: none;
         }
       `}</style>
-      <div style={{ width: '100%', background: '#ce181e', color: '#fff', padding: '8px 0', margin: 0, textAlign: 'center', fontWeight: 600, fontSize: 18, letterSpacing: '0.5px', boxShadow: '0 2px 8px #eee', zIndex: 100, display: 'flex', justifyContent: 'flex-end', alignItems: 'center', minHeight: 48 }}>
+      <div style={{ width: '100%', background: '#ce181e', color: '#fff', padding: '8px 0', margin: 0, textAlign: 'center', fontWeight: 600, fontSize: 18, letterSpacing: '0.5px', boxShadow: '0 2px 8px #eee', zIndex: 1000, display: 'flex', justifyContent: 'flex-end', alignItems: 'center', minHeight: 48, position: 'fixed', top: 0, left: 0 }}>
         <button
           style={{ marginRight: 32, padding: '8px 18px', fontSize: 16, background: '#fff', color: '#ce181e', border: 'none', borderRadius: 6, cursor: 'pointer', fontWeight: 600, boxShadow: '0 1px 4px #bdbdbd' }}
           onClick={() => window.location.href = '/login'}
@@ -72,7 +72,7 @@ export default function Home() {
       {/* Responsive meta tag for mobile */}
       <style>{`
         @media (max-width: 600px) {
-          .dashboard-main { padding: 8px !important; }
+          .dashboard-main { padding: 8px !important; padding-top: 48px !important; }
           .dashboard-row { flex-direction: column !important; gap: 16px !important; }
           .dashboard-col { min-width: 0 !important; width: 100% !important; }
           .dashboard-title { font-size: 22px !important; }
@@ -81,7 +81,7 @@ export default function Home() {
         }
         .ack-logo { height: 150px; object-fit: contain; }
       `}</style>
-      <main className="dashboard-main" style={{ width: '100%', maxWidth: 900, margin: '0 auto', padding: 24, minHeight: '100vh' }}>
+      <main className="dashboard-main" style={{ width: '100%', maxWidth: 900, margin: '0 auto', padding: 24, minHeight: '100vh', paddingTop: 48 }}>
         <h1 className="dashboard-title" style={{ fontSize: 36, fontWeight: 'bold', marginBottom: 12, letterSpacing: '-0.5px' }}>
           Accelerating Universal Mental Health Access Through AI-Powered Suicide Prevention
         </h1>
