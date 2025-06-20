@@ -108,31 +108,72 @@ export default function Labelling() {
         <div style={{ color: '#555', marginBottom: 10 }}>{posts[current].body}</div>
         <div style={{ fontSize: 13, color: '#888', marginBottom: 6 }}>Created: {new Date(posts[current].created).toLocaleString()}</div>
       </div>
-      {/* Select boxes */}
-      <div style={{ display: 'flex', gap: 16, marginBottom: 18 }}>
-        <div>
-          <label htmlFor='type-select' style={{ fontWeight: 500 }}>Type: </label>
-          <select
-            id='type-select'
-            value={labels[current].type}
-            onChange={e => handleSelect('type', e.target.value)}
-            style={{ marginLeft: 6 }}
-          >
-            <option value=''>Select</option>
-            {[1,2,3,4].map(v => <option key={v} value={v}>{v}</option>)}
-          </select>
+      {/* Radio button selections for Type and Scale */}
+      {/* Type and Scale selections in separate rows with background */}
+      <div style={{ marginBottom: 18, background: '#ffe0b2', borderRadius: 8, padding: '18px 16px', border: '1.5px solid #ff9800' }}>
+        <div style={{ fontWeight: 500, marginBottom: 4 }}>Type:</div>
+        {/* Type selection in two rows, aligned */}
+        <div style={{ display: 'flex', flexDirection: 'row', gap: 18, marginBottom: 8 }}>
+          {['Ideation', 'Behavior', 'Actural Attempt', 'Suside Indicator'].map(label => (
+            <label key={label} style={{ display: 'flex', alignItems: 'center', fontWeight: 400, minWidth: 120 }}>
+              <input
+                type="radio"
+                name={`type-${current}`}
+                value={label}
+                checked={labels[current].type === label}
+                onChange={e => handleSelect('type', e.target.value)}
+                style={{ marginRight: 6 }}
+              />
+              {label}
+            </label>
+          ))}
         </div>
-        <div>
-          <label htmlFor='scale-select' style={{ fontWeight: 500 }}>Scale: </label>
-          <select
-            id='scale-select'
-            value={labels[current].scale}
-            onChange={e => handleSelect('scale', e.target.value)}
-            style={{ marginLeft: 6 }}
-          >
-            <option value=''>Select</option>
-            {[1,2,3,4].map(v => <option key={v} value={v}>{v}</option>)}
-          </select>
+        <div style={{ display: 'flex', flexDirection: 'row', gap: 18, marginBottom: 12 }}>
+          {['Supportive', 'Unsure', 'Not Related'].map(label => (
+            <label key={label} style={{ display: 'flex', alignItems: 'center', fontWeight: 400, minWidth: 120 }}>
+              <input
+                type="radio"
+                name={`type-${current}`}
+                value={label}
+                checked={labels[current].type === label}
+                onChange={e => handleSelect('type', e.target.value)}
+                style={{ marginRight: 6 }}
+              />
+              {label}
+            </label>
+          ))}
+        </div>
+        <div style={{ fontWeight: 500, marginBottom: 4 }}>Scale:</div>
+        {/* Scale selection in two rows, aligned */}
+        <div style={{ display: 'flex', flexDirection: 'row', gap: 18, marginBottom: 8 }}>
+          {['No Risk', 'Minor Risk', 'Moderate Risk'].map(label => (
+            <label key={label} style={{ display: 'flex', alignItems: 'center', fontWeight: 400, minWidth: 120 }}>
+              <input
+                type="radio"
+                name={`scale-${current}`}
+                value={label}
+                checked={labels[current].scale === label}
+                onChange={e => handleSelect('scale', e.target.value)}
+                style={{ marginRight: 6 }}
+              />
+              {label}
+            </label>
+          ))}
+        </div>
+        <div style={{ display: 'flex', flexDirection: 'row', gap: 18, marginBottom: 12 }}>
+          {['Severe Risk', 'Unsure', 'Not Related'].map(label => (
+            <label key={label} style={{ display: 'flex', alignItems: 'center', fontWeight: 400, minWidth: 120 }}>
+              <input
+                type="radio"
+                name={`scale-${current}`}
+                value={label}
+                checked={labels[current].scale === label}
+                onChange={e => handleSelect('scale', e.target.value)}
+                style={{ marginRight: 6 }}
+              />
+              {label}
+            </label>
+          ))}
         </div>
       </div>
       {/* Prev/Next buttons */}
@@ -146,8 +187,17 @@ export default function Labelling() {
         </button>
         <button
           onClick={handleSubmit}
-          disabled={!labels.every(l => l.type && l.scale)}
-          style={{ padding: '8px 22px', borderRadius: 6, background: labels.every(l => l.type && l.scale) ? '#388e3c' : '#ccc', color: '#fff', border: 'none', fontWeight: 500, cursor: labels.every(l => l.type && l.scale) ? 'pointer' : 'not-allowed', margin: '0 12px' }}
+          disabled={submitStatus && submitStatus.success || !labels.every(l => l.type && l.scale)}
+          style={{
+            padding: '8px 22px',
+            borderRadius: 6,
+            background: (submitStatus && submitStatus.success) ? '#ccc' : (labels.every(l => l.type && l.scale) ? '#388e3c' : '#ccc'),
+            color: '#fff',
+            border: 'none',
+            fontWeight: 500,
+            cursor: (submitStatus && submitStatus.success) || !labels.every(l => l.type && l.scale) ? 'not-allowed' : 'pointer',
+            margin: '0 12px'
+          }}
         >
           Submit
         </button>
