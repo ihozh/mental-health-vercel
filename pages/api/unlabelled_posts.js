@@ -17,7 +17,7 @@ export default async function handler(req, res) {
         WHERE pl.post_hash = p.post_hash AND pl.username = $1
       )
       ORDER BY RANDOM()
-      LIMIT 3
+      LIMIT 30
     `, [username]);
     
     res.status(200).json({ posts: result.rows });

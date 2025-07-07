@@ -21,41 +21,10 @@ export default function Labelling() {
   // Get username from localStorage
   const username = (typeof window !== 'undefined') ? localStorage.getItem('username') : '';
 
-  // Function to fetch random posts
-  async function fetchRandomPosts() {
-    setLoading(true);
-    setError(null);
-    setSubmitStatus(null);
-    setLabelsSubmitted(false);
-    
-    try {
-      const res = await fetch('/api/random_posts');
-      
-      if (!res.ok) {
-        throw new Error('Failed to fetch random posts');
-      }
-      
-      const data = await res.json();
-      
-      if (data.posts && data.posts.length > 0) {
-        setPosts(data.posts);
-        setLabels(data.posts.map(() => ({ type: '', scale: '' })));
-        setCurrent(0);
-        setSubmitStatus({ success: true, message: 'Random posts loaded!' });
-      } else {
-        setSubmitStatus({ success: false, message: 'No posts available.' });
-      }
-    } catch (err) {
-      console.error('Fetch error:', err);
-      setSubmitStatus({ success: false, message: `Error: ${err.message}` });
-    } finally {
-      setLoading(false);
-    }
-  }
-  
   // Load initial posts
   useEffect(() => {
-    fetchRandomPosts();
+    // Load unlabelled posts on initial render
+    fetchUnlabelledPosts();
   }, []);
 
   if (loading) return <div>Loading...</div>;
@@ -141,8 +110,6 @@ export default function Labelling() {
       } else {
         // This is not an error, just informational
         setSubmitStatus({ success: false, message: 'No more unlabelled posts found. Try again later.' });
-        // Fetch random posts as fallback
-        fetchRandomPosts();
       }
     } catch (err) {
       console.error('Fetch error:', err);
