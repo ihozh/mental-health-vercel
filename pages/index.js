@@ -63,6 +63,12 @@ export default function Home() {
       `}</style>
       <div style={{ width: '100%', background: '#ce181e', color: '#fff', padding: '8px 0', margin: 0, textAlign: 'center', fontWeight: 600, fontSize: 18, letterSpacing: '0.5px', boxShadow: '0 2px 8px #eee', zIndex: 1000, display: 'flex', justifyContent: 'flex-end', alignItems: 'center', minHeight: 48, position: 'fixed', top: 0, left: 0 }}>
         <button
+          style={{ marginRight: 16, padding: '8px 18px', fontSize: 16, background: '#fff', color: '#ce181e', border: 'none', borderRadius: 6, cursor: 'pointer', fontWeight: 600, boxShadow: '0 1px 4px #bdbdbd' }}
+          onClick={() => window.location.href = '/progress'}
+        >
+          Progress
+        </button>
+        <button
           style={{ marginRight: 32, padding: '8px 18px', fontSize: 16, background: '#fff', color: '#ce181e', border: 'none', borderRadius: 6, cursor: 'pointer', fontWeight: 600, boxShadow: '0 1px 4px #bdbdbd' }}
           onClick={() => window.location.href = '/login'}
         >
@@ -132,15 +138,84 @@ export default function Home() {
           </div>
         </div>
       </div>
-      <h2 style={{ margin: '18px 0 10px 0', fontWeight: 600, fontSize: 20, letterSpacing: '0.01em' }}>Timeline</h2>
-      <ul style={{ margin: '0 0 18px 0', paddingLeft: 20, fontSize: 15, color: '#333', listStyle: 'disc inside' }}>
-        <li><b>Data Collection</b> <span style={{ background: '#1976d2', color: '#fff', borderRadius: 6, padding: '2px 8px', fontSize: 12, marginLeft: 8 }}>Ongoing</span></li>
-        <li>Data Labeling</li>
-        <li>Model Building</li>
-        <li>First Report on the Data and Model</li>
-        <li>Call for Competitions</li>
-        <li>Organize the Competition</li>
-        <li>Report on the Competition Results</li>
+      
+      <h2 style={{ margin: '18px 0 10px 0', fontWeight: 600, fontSize: 20, letterSpacing: '0.01em' }}>Data Labeling</h2>
+      <section className="dashboard-section" style={{ marginBottom: 24, background: '#f6f8fa', borderRadius: 8, padding: 16, boxShadow: '0 1px 4px #eee' }}>
+        <div style={{ fontSize: 14, marginBottom: 10 }}>
+          <span style={{ fontWeight: 'bold' }}>Advisor:</span> <span style={{ fontWeight: 'normal' }}>
+            <a href="https://manyu26.github.io/daisolab/" target="_blank" rel="noopener noreferrer" style={{ color: '#1976d2', textDecoration: 'none' }}>Dr. Manyu Li</a>
+          </span>
+        </div>
+        {stats.labelingProgress ? (
+          <div>
+            <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: 8 }}>
+              <span style={{ fontWeight: 'bold', fontSize: 15 }}>Progress:</span>
+              <span style={{ fontSize: 14 }}>
+                {stats.labelingProgress.labeled} / {stats.labelingProgress.total} posts labeled
+                ({stats.labelingProgress.total > 0 
+                  ? Math.round((stats.labelingProgress.labeled / stats.labelingProgress.total) * 100)
+                  : 0}%)
+              </span>
+            </div>
+            <div style={{ width: '100%', height: 16, background: '#e0e0e0', borderRadius: 8, overflow: 'hidden' }}>
+              <div 
+                style={{ 
+                  height: '100%', 
+                  width: `${stats.labelingProgress.total > 0 
+                    ? (stats.labelingProgress.labeled / stats.labelingProgress.total) * 100 
+                    : 0}%`, 
+                  background: '#4caf50',
+                  borderRadius: 8,
+                  transition: 'width 0.5s ease-in-out'
+                }}
+              />
+            </div>
+            <div style={{ fontSize: 14, color: '#666', marginTop: 8, fontStyle: 'italic' }}>
+              Help us improve our dataset by <a href="/login" style={{ color: '#1976d2', textDecoration: 'none' }}>logging in</a> and contributing to the labeling process.
+            </div>
+          </div>
+        ) : (
+          <div>Loading labeling progress...</div>
+        )}
+      </section>
+      
+      <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+        <h2 style={{ margin: '18px 0 10px 0', fontWeight: 600, fontSize: 20, letterSpacing: '0.01em' }}>Timeline</h2>
+        <a href="/progress" style={{ color: '#1976d2', textDecoration: 'none', fontSize: 14, fontWeight: 500 }}>
+          View Detailed Progress →
+        </a>
+      </div>
+      <ul style={{ margin: '0 0 18px 0', paddingLeft: 20, fontSize: 15, color: '#333', listStyleType: 'none' }}>
+        <li style={{ marginBottom: 8, display: 'flex', alignItems: 'center' }}>
+          <span style={{ marginRight: 8 }}>•</span>
+          <b>Data Collection</b>
+          <span style={{ background: '#4caf50', color: '#fff', borderRadius: 6, padding: '2px 8px', fontSize: 12, marginLeft: 8 }}>Completed</span>
+        </li>
+        <li style={{ marginBottom: 8, display: 'flex', alignItems: 'center' }}>
+          <span style={{ marginRight: 8 }}>•</span>
+          <b>Data Labeling</b>
+          <span style={{ background: '#1976d2', color: '#fff', borderRadius: 6, padding: '2px 8px', fontSize: 12, marginLeft: 8 }}>Ongoing</span>
+        </li>
+        <li style={{ marginBottom: 8, display: 'flex', alignItems: 'center' }}>
+          <span style={{ marginRight: 8 }}>•</span>
+          Model Building
+        </li>
+        <li style={{ marginBottom: 8, display: 'flex', alignItems: 'center' }}>
+          <span style={{ marginRight: 8 }}>•</span>
+          First Report on the Data and Model
+        </li>
+        <li style={{ marginBottom: 8, display: 'flex', alignItems: 'center' }}>
+          <span style={{ marginRight: 8 }}>•</span>
+          Call for Competitions
+        </li>
+        <li style={{ marginBottom: 8, display: 'flex', alignItems: 'center' }}>
+          <span style={{ marginRight: 8 }}>•</span>
+          Organize the Competition
+        </li>
+        <li style={{ marginBottom: 8, display: 'flex', alignItems: 'center' }}>
+          <span style={{ marginRight: 8 }}>•</span>
+          Report on the Competition Results
+        </li>
       </ul>
       {/* Acknowledgement Subsection */}
       <h2 style={{ margin: '18px 0 10px 0', fontWeight: 600, fontSize: 20, letterSpacing: '0.01em' }}>Acknowledgement</h2>

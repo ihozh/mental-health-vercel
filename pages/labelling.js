@@ -121,7 +121,7 @@ export default function Labelling() {
 
   return (
     <div style={{ maxWidth: 600, margin: '64px auto', padding: 24, border: '1px solid #ccc', borderRadius: 8 }}>
-      <h2>Labelling Page</h2>
+      <h2>Labeling Page</h2>
       {/* Index of all 30 posts */}
       <div style={{ display: 'flex', flexWrap: 'wrap', gap: 4, marginBottom: 16 }}>
         {posts.map((_, idx) => {
