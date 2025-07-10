@@ -14,7 +14,7 @@ export default function ProjectProgress() {
     {
         date: '2025-07-07',
         title: 'Website Development Version 1.1',
-        description: 'Deveope progress page, add label progress bar'
+        description: 'Develop progress page, add label progress bar'
       },
     {
       date: '2025-07-05',
