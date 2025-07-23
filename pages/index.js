@@ -198,7 +198,8 @@ export default function Home() {
         </li>
         <li style={{ marginBottom: 8, display: 'flex', alignItems: 'center' }}>
           <span style={{ marginRight: 8 }}>•</span>
-          Model Building
+          <b>Model Building</b>
+          <span style={{ background: '#1976d2', color: '#fff', borderRadius: 6, padding: '2px 8px', fontSize: 12, marginLeft: 8 }}>Ongoing</span>
         </li>
         <li style={{ marginBottom: 8, display: 'flex', alignItems: 'center' }}>
           <span style={{ marginRight: 8 }}>•</span>

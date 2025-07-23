@@ -8,6 +8,10 @@ export default function ProjectProgress() {
   // Project logs with dates - only showing completed or ongoing items in reverse chronological order (newest first)
   const projectLogs = [
     {
+      date: '2025-07-22',
+      title: 'Start Building Knowledge Base'
+    },
+    {
       date: '2025-07-07',
       title: 'Data Labeling Started'
     },
