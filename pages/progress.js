@@ -9,6 +9,10 @@ export default function ProjectProgress() {
   const projectLogs = [
     {
       date: '2025-08-28',
+      title: 'Project is now live at https://mhdash.socialshields.org'
+    },
+    {
+      date: '2025-08-28',
       title: 'Integrating ICD-10'
     },
     {
