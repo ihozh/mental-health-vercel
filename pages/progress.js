@@ -2,6 +2,8 @@ import React from 'react';
 import { useRouter } from 'next/router';
 import Head from 'next/head';
 
+const url = 'https://mhdash.socialshields.org';
+
 export default function ProjectProgress() {
   const router = useRouter();
   
@@ -9,7 +11,7 @@ export default function ProjectProgress() {
   const projectLogs = [
     {
       date: '2025-08-28',
-      title: 'Project is now live at https://mhdash.socialshields.org'
+      title: `Project is now live at ${url}`
     },
     {
       date: '2025-08-28',
