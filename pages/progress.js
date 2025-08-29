@@ -11,7 +11,8 @@ export default function ProjectProgress() {
   const projectLogs = [
     {
       date: '2025-08-28',
-      title: `Project is now live at ${url}`
+      title: 'Project is now live at ',
+      link: url
     },
     {
       date: '2025-08-28',
@@ -123,7 +124,14 @@ export default function ProjectProgress() {
                   {formatDate(log.date)}
                 </div>
                 <div style={{ display: 'flex', flexDirection: 'column' }}>
-                  <h2 style={{ margin: 0, fontSize: 16, fontWeight: 600, color: '#333' }}>{log.title}</h2>
+                  <h2 style={{ margin: 0, fontSize: 16, fontWeight: 600, color: '#333' }}>
+                    {log.title}
+                    {log.link && (
+                      <a href={log.link} target="_blank" rel="noopener noreferrer" style={{ color: '#0066cc', textDecoration: 'underline', marginLeft: 4 }}>
+                        {log.link}
+                      </a>
+                    )}
+                  </h2>
                   {log.description && (
                     <div style={{ fontSize: 14, color: '#666', marginTop: 4 }}>{log.description}</div>
                   )}
