@@ -20,7 +20,8 @@ export default function ProjectProgress() {
     },
     {
       date: '2025-08-27',
-      title: 'Our project has been honored with the Louisiana Impact Award. We sincerely thank the University of Louisiana at Lafayette for this recognition.',
+      title: 'Honored with the Louisiana Impact Award',
+      description: 'Our project has been honored with the Louisiana Impact Award. We sincerely thank the University of Louisiana at Lafayette for this recognition.',
       link: 'https://louisiana.edu/graduateschool/news/university-louisiana-lafayette-announces-round-4-research-award-recipients',
       linkText: 'news link'
     },
