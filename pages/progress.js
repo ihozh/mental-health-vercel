@@ -135,7 +135,7 @@ export default function ProjectProgress() {
                   </h2>
                   {log.link && (
                     <div style={{ marginTop: 4 }}>
-                      <a href={log.link} target="_blank" rel="noopener noreferrer" style={{ color: '#0066cc', textDecoration: 'underline', fontSize: 14 }}>
+                      <a href={log.link} target="_blank" rel="noopener noreferrer" style={{ color: '#0066cc', textDecoration: 'underline', fontSize: 16 }}>
                         {log.linkText || log.link}
                       </a>
                     </div>
@@ -153,7 +153,7 @@ export default function ProjectProgress() {
         
         <div style={{ marginTop: 24, padding: 12, borderTop: '1px solid #eee', textAlign: 'right' }}>
           <p style={{ margin: 0, fontSize: 13, color: '#888' }}>
-            Updated: July 7, 2025
+            Updated: {new Date().toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}
           </p>
         </div>
       </main>
