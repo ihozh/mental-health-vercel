@@ -20,7 +20,7 @@ export default function ProjectProgress() {
     },
     {
       date: '2025-08-27',
-      title: 'Our project has been awarded as Louisiana Impact Awards, thank you for University of Louisiana at Lafayette',
+      title: 'Our project has been honored with the Louisiana Impact Award. We sincerely thank the University of Louisiana at Lafayette for this recognition.',
       link: 'https://louisiana.edu/graduateschool/news/university-louisiana-lafayette-announces-round-4-research-award-recipients',
       linkText: 'news link'
     },
@@ -132,12 +132,14 @@ export default function ProjectProgress() {
                 <div style={{ display: 'flex', flexDirection: 'column' }}>
                   <h2 style={{ margin: 0, fontSize: 16, fontWeight: 600, color: '#333' }}>
                     {log.title}
-                    {log.link && (
-                      <a href={log.link} target="_blank" rel="noopener noreferrer" style={{ color: '#0066cc', textDecoration: 'underline', marginLeft: 4 }}>
+                  </h2>
+                  {log.link && (
+                    <div style={{ marginTop: 4 }}>
+                      <a href={log.link} target="_blank" rel="noopener noreferrer" style={{ color: '#0066cc', textDecoration: 'underline', fontSize: 14 }}>
                         {log.linkText || log.link}
                       </a>
-                    )}
-                  </h2>
+                    </div>
+                  )}
                   {log.description && (
                     <div style={{ fontSize: 14, color: '#666', marginTop: 4 }}>{log.description}</div>
                   )}
