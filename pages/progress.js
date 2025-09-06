@@ -133,16 +133,21 @@ export default function ProjectProgress() {
                 <div style={{ display: 'flex', flexDirection: 'column' }}>
                   <h2 style={{ margin: 0, fontSize: 16, fontWeight: 600, color: '#333' }}>
                     {log.title}
+                    {log.title === 'Project is now live at ' && log.link && (
+                      <a href={log.link} target="_blank" rel="noopener noreferrer" style={{ color: '#0066cc', textDecoration: 'underline', marginLeft: 4 }}>
+                        {log.link}
+                      </a>
+                    )}
                   </h2>
-                  {log.link && (
+                  {log.description && (
+                    <div style={{ fontSize: 14, color: '#666', marginTop: 4 }}>{log.description}</div>
+                  )}
+                  {log.link && log.title !== 'Project is now live at ' && (
                     <div style={{ marginTop: 4 }}>
                       <a href={log.link} target="_blank" rel="noopener noreferrer" style={{ color: '#0066cc', textDecoration: 'underline', fontSize: 16 }}>
                         {log.linkText || log.link}
                       </a>
                     </div>
-                  )}
-                  {log.description && (
-                    <div style={{ fontSize: 14, color: '#666', marginTop: 4 }}>{log.description}</div>
                   )}
                 </div>
               </div>
