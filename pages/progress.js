@@ -16,7 +16,12 @@ export default function ProjectProgress() {
     },
     {
       date: '2025-08-28',
-      title: 'Integrating ICD-10'
+      title: 'Integrating ICD-11'
+    },
+    {
+      date: '2025-08-27',
+      title: 'Our project has been awarded as Louisiana Impact Awards, thank you for University of Louisiana at Lafayette',
+      link: 'https://louisiana.edu/graduateschool/news/university-louisiana-lafayette-announces-round-4-research-award-recipients'
     },
     {
       date: '2025-07-22',
