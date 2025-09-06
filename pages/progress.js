@@ -119,7 +119,7 @@ export default function ProjectProgress() {
                 display: 'flex',
                 alignItems: 'center',
                 borderBottom: '1px solid #eee',
-                background: index % 2 === 0 ? '#fafafa' : '#f7f7f7'
+                background: index % 2 === 0 ? '#ffffff' : '#f9f9f9'
               }}>
                 <div className="log-date" style={{ 
                   color: '#666', 
