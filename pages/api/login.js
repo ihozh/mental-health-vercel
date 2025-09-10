@@ -6,12 +6,12 @@ export default async function handler(req, res) {
   const { username, password } = req.body;
   if (!username || !password) return res.status(400).json({ error: 'Missing username or password' });
   try {
-    const result = await pool.query('SELECT password_hash FROM users WHERE username = $1', [username]);
+    const result = await pool.query('SELECT password_hash, name FROM users WHERE username = $1', [username]);
     if (result.rows.length === 0) return res.status(401).json({ error: 'Invalid credentials' });
     const valid = await bcrypt.compare(password, result.rows[0].password_hash);
     if (!valid) return res.status(401).json({ error: 'Invalid credentials' });
-    // Optionally: set a cookie/session here
-    res.status(200).json({ success: true });
+    // Return success with user's name
+    res.status(200).json({ success: true, name: result.rows[0].name || username });
   } catch (err) {
     res.status(500).json({ error: err.message });
   }

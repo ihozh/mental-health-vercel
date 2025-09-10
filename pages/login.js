@@ -28,9 +28,11 @@ export default function Login() {
       body: JSON.stringify({ username, password })
     });
     if (res.ok) {
-      // Store username and redirect to labelling page
+      const data = await res.json();
+      // Store username, name and redirect to labelling page
       if (typeof window !== 'undefined') {
         localStorage.setItem('username', username);
+        localStorage.setItem('name', data.name || username);
       }
       router.replace('/labelling');
     } else {

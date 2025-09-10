@@ -18,8 +18,9 @@ export default function Labelling() {
     }
   }, [router]);
 
-  // Get username from localStorage
+  // Get username and name from localStorage
   const username = (typeof window !== 'undefined') ? localStorage.getItem('username') : '';
+  const name = (typeof window !== 'undefined') ? localStorage.getItem('name') : username;
 
   // Load initial posts
   useEffect(() => {
@@ -119,9 +120,37 @@ export default function Labelling() {
     }
   }
 
+  const handleLogout = () => {
+    if (typeof window !== 'undefined') {
+      localStorage.removeItem('username');
+      router.replace('/login');
+    }
+  };
+
   return (
-    <div style={{ maxWidth: 600, margin: '64px auto', padding: 24, border: '1px solid #ccc', borderRadius: 8 }}>
+    <div style={{ maxWidth: 600, margin: '64px auto', padding: 24, border: '1px solid #ccc', borderRadius: 8, position: 'relative' }}>
+      <button 
+        onClick={handleLogout}
+        style={{
+          position: 'absolute',
+          top: 10,
+          right: 10,
+          padding: '6px 12px',
+          background: '#f44336',
+          color: 'white',
+          border: 'none',
+          borderRadius: 4,
+          cursor: 'pointer',
+          fontWeight: 500,
+          fontSize: '14px'
+        }}
+      >
+        Logout
+      </button>
       <h2>Labeling Page</h2>
+      <div style={{ marginBottom: 16, fontSize: '16px', color: '#333' }}>
+        Hello, {name || username}!
+      </div>
       {/* Index of all 30 posts */}
       <div style={{ display: 'flex', flexWrap: 'wrap', gap: 4, marginBottom: 16 }}>
         {posts.map((_, idx) => {
