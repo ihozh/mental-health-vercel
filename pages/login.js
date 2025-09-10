@@ -43,8 +43,36 @@ export default function Login() {
   }
 
   return (
-    <div style={{ maxWidth: 350, margin: '64px auto', padding: 24, border: '1px solid #ccc', borderRadius: 8 }}>
-      <h2>Login</h2>
+    <>
+      {/* Top Bar with Navigation Buttons */}
+      <style>{`
+        html, body {
+          margin: 0;
+          padding: 0;
+          overscroll-behavior: none;
+        }
+      `}</style>
+      <div style={{ width: '100%', background: '#ce181e', color: '#fff', padding: '8px 0', margin: 0, textAlign: 'center', fontWeight: 600, fontSize: 18, letterSpacing: '0.5px', boxShadow: '0 2px 8px #eee', zIndex: 1000, display: 'flex', justifyContent: 'space-between', alignItems: 'center', minHeight: 48, position: 'fixed', top: 0, left: 0 }}>
+        <div style={{ marginLeft: 32 }}>
+          <button
+            style={{ padding: '8px 18px', fontSize: 16, background: '#fff', color: '#ce181e', border: 'none', borderRadius: 6, cursor: 'pointer', fontWeight: 600, boxShadow: '0 1px 4px #bdbdbd' }}
+            onClick={() => router.push('/')}
+          >
+            Back to Dashboard
+          </button>
+        </div>
+        <div style={{ marginRight: 32 }}>
+          <button
+            style={{ padding: '8px 18px', fontSize: 16, background: '#fff', color: '#ce181e', border: 'none', borderRadius: 6, cursor: 'pointer', fontWeight: 600, boxShadow: '0 1px 4px #bdbdbd' }}
+            onClick={() => router.push('/progress')}
+          >
+            Progress
+          </button>
+        </div>
+      </div>
+      
+      <div style={{ maxWidth: 350, margin: '100px auto', padding: 24, border: '1px solid #ccc', borderRadius: 8 }}>
+        <h2>Login</h2>
       <form onSubmit={handleSubmit}>
         <input
           type="text"
@@ -64,5 +92,6 @@ export default function Login() {
         {error && <div style={{ color: 'red', marginTop: 10 }}>{error}</div>}
       </form>
     </div>
+    </>
   );
 }
