@@ -63,35 +63,49 @@ export default function Login() {
         </div>
         <div style={{ marginRight: 32 }}>
           <button
-            style={{ padding: '8px 18px', fontSize: 16, background: '#fff', color: '#ce181e', border: 'none', borderRadius: 6, cursor: 'pointer', fontWeight: 600, boxShadow: '0 1px 4px #bdbdbd' }}
+            style={{ marginRight: 16, padding: '8px 18px', fontSize: 16, background: '#fff', color: '#ce181e', border: 'none', borderRadius: 6, cursor: 'pointer', fontWeight: 600, boxShadow: '0 1px 4px #bdbdbd' }}
+            onClick={() => router.push('/participants')}
+          >
+            Participants
+          </button>
+          <button
+            style={{ marginRight: 16, padding: '8px 18px', fontSize: 16, background: '#fff', color: '#ce181e', border: 'none', borderRadius: 6, cursor: 'pointer', fontWeight: 600, boxShadow: '0 1px 4px #bdbdbd' }}
             onClick={() => router.push('/progress')}
           >
             Progress
           </button>
+          <button
+            style={{ padding: '8px 18px', fontSize: 16, background: '#fff', color: '#ce181e', border: 'none', borderRadius: 6, cursor: 'pointer', fontWeight: 600, boxShadow: '0 1px 4px #bdbdbd' }}
+            onClick={() => router.push('/login')}
+          >
+            Login
+          </button>
         </div>
       </div>
       
-      <div style={{ maxWidth: 350, margin: '100px auto', padding: 24, border: '1px solid #ccc', borderRadius: 8 }}>
-        <h2>Login</h2>
-      <form onSubmit={handleSubmit}>
-        <input
-          type="text"
-          placeholder="Username"
-          value={username}
-          onChange={e => setUsername(e.target.value)}
-          style={{ width: '100%', marginBottom: 12, padding: 8 }}
-        />
-        <input
-          type="password"
-          placeholder="Password"
-          value={password}
-          onChange={e => setPassword(e.target.value)}
-          style={{ width: '100%', marginBottom: 12, padding: 8 }}
-        />
-        <button type="submit" style={{ width: '100%', padding: 10, background: '#1976d2', color: '#fff', border: 'none', borderRadius: 6 }}>Login</button>
-        {error && <div style={{ color: 'red', marginTop: 10 }}>{error}</div>}
-      </form>
-    </div>
+      <main style={{ width: '100%', maxWidth: 900, margin: '0 auto', padding: 24, minHeight: '100vh', paddingTop: 48 }}>
+        <div style={{ maxWidth: 350, margin: '48px auto', padding: 24, border: '1px solid #ccc', borderRadius: 8 }}>
+          <h2>Login</h2>
+          <form onSubmit={handleSubmit}>
+            <input
+              type="text"
+              placeholder="Username"
+              value={username}
+              onChange={e => setUsername(e.target.value)}
+              style={{ width: '100%', marginBottom: 12, padding: 8 }}
+            />
+            <input
+              type="password"
+              placeholder="Password"
+              value={password}
+              onChange={e => setPassword(e.target.value)}
+              style={{ width: '100%', marginBottom: 12, padding: 8 }}
+            />
+            <button type="submit" style={{ width: '100%', padding: 10, background: '#1976d2', color: '#fff', border: 'none', borderRadius: 6 }}>Login</button>
+            {error && <div style={{ color: 'red', marginTop: 10 }}>{error}</div>}
+          </form>
+        </div>
+      </main>
     </>
   );
 }
