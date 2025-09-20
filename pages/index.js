@@ -4,7 +4,6 @@
 import React, { useState, useEffect } from 'react';
 import Chart from '../components/Chart';
 
-// Helper: filter per-hour data to only the last 24 hours
 // Helper: filter per-hour data to only the last 24 hours using system time
 function getLast24Hours(data, nowStr) {
   if (!Array.isArray(data) || data.length === 0) return [];
@@ -166,13 +165,17 @@ export default function Home() {
           Accelerating Universal Mental Health Access Through AI-Powered Suicide Prevention
         </h1>
       <section className="dashboard-section" style={{ marginBottom: 24, background: '#f6f8fa', borderRadius: 8, padding: 16, boxShadow: '0 1px 4px #eee' }}>
-        <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', gap: 32, fontSize: 16, marginBottom: 6 }}>
-          <span style={{ fontWeight: 'bold' }}>Lead:</span> <span style={{ fontWeight: 'normal', marginRight: 24 }}>
-            <a href="https://ihozh.github.io/" target="_blank" rel="noopener noreferrer" style={{ color: '#1976d2', textDecoration: 'none' }}>Yihe Zhang</a>
-          </span>
-          <span style={{ fontWeight: 'bold' }}>Advisor:</span> <span style={{ fontWeight: 'normal' }}>
-            <a href="https://www.xialihei.com/" target="_blank" rel="noopener noreferrer" style={{ color: '#1976d2', textDecoration: 'none' }}>Xiali (Sharon) Hei</a>
-          </span>
+        <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', fontSize: 16, marginBottom: 6, maxWidth: 560, margin: '0 auto' }}>
+          <div>
+            <span style={{ fontWeight: 'bold' }}>Lead:</span> <span style={{ fontWeight: 'normal' }}>
+              <a href="https://ihozh.github.io/" target="_blank" rel="noopener noreferrer" style={{ color: '#1976d2', textDecoration: 'none' }}>Yihe Zhang</a>
+            </span>
+          </div>
+          <div>
+            <span style={{ fontWeight: 'bold' }}>Advisor:</span> <span style={{ fontWeight: 'normal' }}>
+              <a href="https://www.xialihei.com/" target="_blank" rel="noopener noreferrer" style={{ color: '#1976d2', textDecoration: 'none' }}>Xiali (Sharon) Hei</a>
+            </span>
+          </div>
         </div>
         <div><b>Affiliation:</b> Informatics Research Institute, University of Louisiana at Lafayette</div>
         <div><b>Contact:</b> <a href="mailto:yihe.zhang@louisiana.edu">yihe.zhang@louisiana.edu</a></div>
