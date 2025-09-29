@@ -17,7 +17,7 @@ export default function ProjectProgress() {
   const projectLogs = [
     {
       date: '2025-09-28',
-      title: 'We started monitoring autism-related social posts',
+      title: 'We started monitoring autism, ADHD, and PTSD-related social posts',
     },
     {
       date: '2025-08-28',
