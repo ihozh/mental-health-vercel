@@ -16,6 +16,10 @@ export default function ProjectProgress() {
   // Project logs with dates - only showing completed or ongoing items in reverse chronological order (newest first)
   const projectLogs = [
     {
+      date: '2025-09-28',
+      title: 'We started monitoring autism-related social posts',
+    },
+    {
       date: '2025-08-28',
       title: 'Project is now live at ',
       link: url
