@@ -191,10 +191,11 @@ export default function Home() {
       <h2 style={{ margin: '18px 0 10px 0', fontWeight: 600, fontSize: 20, letterSpacing: '0.01em' }}>United Nations Sustainable Development Goals</h2>
       <section className="dashboard-section" style={{ marginBottom: 24, background: '#f6f8fa', borderRadius: 8, padding: 16, boxShadow: '0 1px 4px #eee' }}>
         <div className="sdg-row" style={{ display: 'flex', alignItems: 'center', gap: 16 }}>
-          <div style={{ flex: '0 0 220px' }}>
+          <div style={{ flex: '0 0 320px' }}>
             <div style={{ display: 'flex', gap: 8, alignItems: 'center' }}>
-              <img src="/SDG3.jpg" alt="Sustainable Development Goals 1" className="sdg-image" style={{ width: 100, height: 'auto', objectFit: 'cover' }} />
-              <img src="/SDG9.png" alt="Sustainable Development Goals 2" className="sdg-image" style={{ width: 100, height: 'auto', objectFit: 'cover' }} />
+              <img src="/SDG3.jpg" alt="Sustainable Development Goals 3" className="sdg-image" style={{ width: 100, height: 'auto', objectFit: 'cover' }} />
+              <img src="/SDG9.png" alt="Sustainable Development Goals 9" className="sdg-image" style={{ width: 100, height: 'auto', objectFit: 'cover' }} />
+              <img src="/sdg17.png" alt="Sustainable Development Goals 17" className="sdg-image" style={{ width: 100, height: 'auto', objectFit: 'cover' }} />
             </div>
           </div>
           <div style={{ flex: 1, fontSize: 15, color: '#333' }}>
@@ -202,9 +203,12 @@ export default function Home() {
               Learn more about the 2030 Agenda at
               {' '}<a href="https://sdgs.un.org" target="_blank" rel="noopener noreferrer" style={{ color: '#1976d2', textDecoration: 'none' }}>sdgs.un.org</a>.
               <br /><br />
-              <b>Goal 3: Good Health and Well-Being</b> AI that detects early, prevents risk, and saves lives.
+              <b>Goal 3: </b> Detects early, prevents risk, and saves lives.
               <br />
-              <b>Goal 9: Industry, Innovation and Infrastructure</b> Robust pipelines for responsible, accessible mental health AI.
+              <b>Goal 9: </b> Robust pipelines for responsible, accessible mental health AI.
+              <br />
+              <b>Goal 17: </b> Opensource, collaborative mental health AI.
+              <br />
             </p>
           </div>
         </div>
