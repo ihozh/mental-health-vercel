@@ -157,8 +157,11 @@ export default function Home() {
           .dashboard-title { font-size: 22px !important; }
           .dashboard-section { padding: 10px !important; }
           .ack-logo { height: 70px !important; }
+          .sdg-row { flex-direction: column !important; }
+          .sdg-image { max-width: 100% !important; margin-bottom: 12px !important; }
         }
         .ack-logo { height: 150px; object-fit: contain; }
+        .sdg-image { border-radius: 8px; box-shadow: 0 1px 4px #eee; }
       `}</style>
       <main className="dashboard-main" style={{ width: '100%', maxWidth: 900, margin: '0 auto', padding: 24, minHeight: '100vh', paddingTop: 48 }}>
         <h1 className="dashboard-title" style={{ fontSize: 36, fontWeight: 'bold', marginBottom: 12, letterSpacing: '-0.5px' }}>
@@ -184,6 +187,28 @@ export default function Home() {
         <span>Last Updated: {new Date(stats.now).toLocaleString()}</span>
       </section>
 
+      {/* Sustainable Development Goals Section */}
+      <h2 style={{ margin: '18px 0 10px 0', fontWeight: 600, fontSize: 20, letterSpacing: '0.01em' }}>United Nations Sustainable Development Goals</h2>
+      <section className="dashboard-section" style={{ marginBottom: 24, background: '#f6f8fa', borderRadius: 8, padding: 16, boxShadow: '0 1px 4px #eee' }}>
+        <div className="sdg-row" style={{ display: 'flex', alignItems: 'center', gap: 16 }}>
+          <div style={{ flex: '0 0 220px' }}>
+            <div style={{ display: 'flex', gap: 8, alignItems: 'center' }}>
+              <img src="/SDG3.jpg" alt="Sustainable Development Goals 1" className="sdg-image" style={{ width: 100, height: 'auto', objectFit: 'cover' }} />
+              <img src="/SDG9.png" alt="Sustainable Development Goals 2" className="sdg-image" style={{ width: 100, height: 'auto', objectFit: 'cover' }} />
+            </div>
+          </div>
+          <div style={{ flex: 1, fontSize: 15, color: '#333' }}>
+            <p style={{ margin: 0 }}>
+              Learn more about the 2030 Agenda at
+              {' '}<a href="https://sdgs.un.org" target="_blank" rel="noopener noreferrer" style={{ color: '#1976d2', textDecoration: 'none' }}>sdgs.un.org</a>.
+              <br /><br />
+              <b>Goal 3: Good Health and Well-Being</b> AI that detects early, prevents risk, and saves lives.
+              <br />
+              <b>Goal 9: Industry, Innovation and Infrastructure</b> Robust pipelines for responsible, accessible mental health AI.
+            </p>
+          </div>
+        </div>
+      </section>
 
       <h2 style={{ margin: '24px 0 14px 0', fontWeight: 600, fontSize: 20, letterSpacing: '0.01em' }}>Data Collection Progress (Live)</h2>
       <div className="dashboard-row" style={{ display: 'flex', flexDirection: 'row', gap: 32 }}>
@@ -304,6 +329,9 @@ export default function Home() {
         <div style={{ display: 'flex', gap: 32, alignItems: 'center', justifyContent: 'center', marginTop: 10 }}>
           <img src="/ull.png" alt="ULL Logo" className="ack-logo" />
           <img src="/nsf.png" alt="NSF Logo" className="ack-logo" />
+        </div>
+        <div style={{ display: 'flex', gap: 32, alignItems: 'center', justifyContent: 'center', marginTop: 10 }}>
+          <img src="/UN.jpg" alt="United Nations Logo" className="ack-logo" />
         </div>
       </section>
     </main>
