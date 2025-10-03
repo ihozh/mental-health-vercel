@@ -157,8 +157,10 @@ export default function Home() {
           .dashboard-title { font-size: 22px !important; }
           .dashboard-section { padding: 10px !important; }
           .ack-logo { height: 70px !important; }
-          .sdg-row { flex-direction: column !important; }
+          .sdg-row { flex-direction: column !important; align-items: flex-start !important; gap: 8px !important; }
           .sdg-image { max-width: 100% !important; margin-bottom: 12px !important; }
+          .sdg-images-col { flex: 0 0 auto !important; width: 100% !important; }
+          .sdg-images { justify-content: center !important; }
         }
         .ack-logo { height: 150px; object-fit: contain; }
         .sdg-image { border-radius: 8px; box-shadow: 0 1px 4px #eee; }
@@ -191,8 +193,8 @@ export default function Home() {
       <h2 style={{ margin: '18px 0 10px 0', fontWeight: 600, fontSize: 20, letterSpacing: '0.01em' }}>United Nations Sustainable Development Goals</h2>
       <section className="dashboard-section" style={{ marginBottom: 24, background: '#f6f8fa', borderRadius: 8, padding: 16, boxShadow: '0 1px 4px #eee' }}>
         <div className="sdg-row" style={{ display: 'flex', alignItems: 'center', gap: 16 }}>
-          <div style={{ flex: '0 0 320px' }}>
-            <div style={{ display: 'flex', gap: 8, alignItems: 'center' }}>
+          <div className="sdg-images-col" style={{ flex: '0 0 320px' }}>
+            <div className="sdg-images" style={{ display: 'flex', gap: 8, alignItems: 'center' }}>
               <img src="/SDG3.jpg" alt="Sustainable Development Goals 3" className="sdg-image" style={{ width: 100, height: 'auto', objectFit: 'cover' }} />
               <img src="/SDG9.png" alt="Sustainable Development Goals 9" className="sdg-image" style={{ width: 100, height: 'auto', objectFit: 'cover' }} />
               <img src="/SDG17.png" alt="Sustainable Development Goals 17" className="sdg-image" style={{ width: 100, height: 'auto', objectFit: 'cover' }} />
@@ -202,7 +204,7 @@ export default function Home() {
             <p style={{ margin: 0 }}>
               Learn more about the 2030 Agenda at
               {' '}<a href="https://sdgs.un.org" target="_blank" rel="noopener noreferrer" style={{ color: '#1976d2', textDecoration: 'none' }}>sdgs.un.org</a>.
-              <br /><br />
+              <br />
               <b>Goal 3: </b> Detects early, prevents risk, and saves lives.
               <br />
               <b>Goal 9: </b> Robust pipelines for responsible, accessible mental health AI.
