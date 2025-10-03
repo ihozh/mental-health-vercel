@@ -195,7 +195,7 @@ export default function Home() {
             <div style={{ display: 'flex', gap: 8, alignItems: 'center' }}>
               <img src="/SDG3.jpg" alt="Sustainable Development Goals 3" className="sdg-image" style={{ width: 100, height: 'auto', objectFit: 'cover' }} />
               <img src="/SDG9.png" alt="Sustainable Development Goals 9" className="sdg-image" style={{ width: 100, height: 'auto', objectFit: 'cover' }} />
-              <img src="/sdg17.png" alt="Sustainable Development Goals 17" className="sdg-image" style={{ width: 100, height: 'auto', objectFit: 'cover' }} />
+              <img src="/SDG17.png" alt="Sustainable Development Goals 17" className="sdg-image" style={{ width: 100, height: 'auto', objectFit: 'cover' }} />
             </div>
           </div>
           <div style={{ flex: 1, fontSize: 15, color: '#333' }}>
