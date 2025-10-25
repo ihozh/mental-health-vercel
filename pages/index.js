@@ -2,6 +2,7 @@
 //   return <div>Hello from index.js</div>
 // }
 import React, { useState, useEffect } from 'react';
+import Script from 'next/script';
 import Chart from '../components/Chart';
 
 // Helper: filter per-hour data to only the last 24 hours using system time
@@ -341,7 +342,7 @@ export default function Home() {
         </div>
       </section>
     </main>
+    <script type="text/javascript" id="clstr_globe" src="//clustrmaps.com/globe.js?d=hcDiYNu7KM_OeNEQ3UCpOxM522zFt6fVjMIcYNUJj4M"></script>
     </>
   );
 }
-
