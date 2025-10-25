@@ -2,7 +2,6 @@
 //   return <div>Hello from index.js</div>
 // }
 import React, { useState, useEffect } from 'react';
-import Script from 'next/script';
 import Chart from '../components/Chart';
 
 // Helper: filter per-hour data to only the last 24 hours using system time
@@ -43,6 +42,7 @@ export default function Home() {
         setLoading(false);
       });
   }, []);
+
 
   if (loading) return <div>Loading...</div>;
   if (error) return (
@@ -341,8 +341,14 @@ export default function Home() {
           <img src="/UN.jpg" alt="United Nations Logo" className="ack-logo" />
         </div>
       </section>
+      
+      {/* ClustrMaps Widget */}
+      <section style={{ marginBottom: 24, textAlign: 'center' }}>
+        <div style={{ padding: '16px' }}>
+          <a href='https://clustrmaps.com/site/1c8aw'  title='Visit tracker'><img src='//clustrmaps.com/map_v2.png?cl=ffffff&w=300&t=tt&d=hcDiYNu7KM_OeNEQ3UCpOxM522zFt6fVjMIcYNUJj4M'/></a>
+        </div>
+      </section>
     </main>
-    <script type="text/javascript" id="clstr_globe" src="//clustrmaps.com/globe.js?d=hcDiYNu7KM_OeNEQ3UCpOxM522zFt6fVjMIcYNUJj4M"></script>
     </>
   );
 }
