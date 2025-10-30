@@ -385,6 +385,9 @@ export default function Home() {
             </div>
           </div>
         </div>
+        <div style={{ marginTop: 16, padding: '12px 16px', fontSize: 14, color: '#666', textAlign: 'center' }}>
+          <strong>📊 Dataset Access:</strong> Please contact the team for acquiring the dataset. <a href="/login?redirect=/dataset" style={{ color: '#1976d2', textDecoration: 'none', fontWeight: 600 }}>Login</a> to access download options.
+        </div>
       </section>
       
       <section>

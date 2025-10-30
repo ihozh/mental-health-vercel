@@ -8,21 +8,22 @@ export default function Login() {
   const [error, setError] = useState('');
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const router = useRouter();
+  const { redirect } = router.query;
   
   // Toggle mobile menu
   const toggleMobileMenu = () => {
     setMobileMenuOpen(!mobileMenuOpen);
   };
 
-  // If already logged in, redirect to /labelling
+  // If already logged in, redirect to appropriate page
   useEffect(() => {
     if (typeof window !== 'undefined') {
       const username = localStorage.getItem('username');
       if (username && username.trim() !== '') {
-        router.replace('/labelling');
+        router.replace(redirect || '/labelling');
       }
     }
-  }, [router]);
+  }, [router, redirect]);
 
   async function handleSubmit(e) {
     e.preventDefault();
@@ -35,12 +36,12 @@ export default function Login() {
     });
     if (res.ok) {
       const data = await res.json();
-      // Store username, name and redirect to labelling page
+      // Store username, name and redirect to appropriate page
       if (typeof window !== 'undefined') {
         localStorage.setItem('username', username);
         localStorage.setItem('name', data.name || username);
       }
-      router.replace('/labelling');
+      router.replace(redirect || '/labelling');
     } else {
       const data = await res.json();
       setError(data.error || 'Login failed');
