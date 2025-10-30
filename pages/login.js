@@ -117,6 +117,12 @@ export default function Login() {
             Progress
           </button>
           <button
+            style={{ marginRight: 16, padding: '8px 18px', fontSize: 16, background: '#fff', color: '#ce181e', border: 'none', borderRadius: 6, cursor: 'pointer', fontWeight: 600, boxShadow: '0 1px 4px #bdbdbd' }}
+            onClick={() => router.push('/dataset')}
+          >
+            Dataset
+          </button>
+          <button
             style={{ padding: '8px 18px', fontSize: 16, background: '#fff', color: '#ce181e', border: 'none', borderRadius: 6, cursor: 'pointer', fontWeight: 600, boxShadow: '0 1px 4px #bdbdbd' }}
             onClick={() => router.push('/login')}
           >
@@ -142,6 +148,9 @@ export default function Login() {
             </button>
             <button className="mobile-menu-button" onClick={() => router.push('/progress')}>
               Progress
+            </button>
+            <button className="mobile-menu-button" onClick={() => router.push('/dataset')}>
+              Dataset
             </button>
             <button className="mobile-menu-button" onClick={() => router.push('/login')}>
               Login

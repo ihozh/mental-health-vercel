@@ -121,6 +121,12 @@ export default function Home() {
             Progress
           </button>
           <button
+            style={{ marginRight: 16, padding: '8px 18px', fontSize: 16, background: '#fff', color: '#ce181e', border: 'none', borderRadius: 6, cursor: 'pointer', fontWeight: 600, boxShadow: '0 1px 4px #bdbdbd' }}
+            onClick={() => window.location.href = '/dataset'}
+          >
+            Dataset
+          </button>
+          <button
             style={{ marginRight: 32, padding: '8px 18px', fontSize: 16, background: '#fff', color: '#ce181e', border: 'none', borderRadius: 6, cursor: 'pointer', fontWeight: 600, boxShadow: '0 1px 4px #bdbdbd' }}
             onClick={() => window.location.href = '/login'}
           >
@@ -146,6 +152,9 @@ export default function Home() {
             </button>
             <button className="mobile-menu-button" onClick={() => window.location.href = '/progress'}>
               Progress
+            </button>
+            <button className="mobile-menu-button" onClick={() => window.location.href = '/dataset'}>
+              Dataset
             </button>
             <button className="mobile-menu-button" onClick={() => window.location.href = '/login'}>
               Login
@@ -291,7 +300,94 @@ export default function Home() {
           <div>Loading labeling progress...</div>
         )}
       </section>
+        
+      {/* Dataset Statistics */}
+      <h2 style={{ margin: '18px 0 10px 0', fontWeight: 600, fontSize: 20, letterSpacing: '0.01em' }}>Dataset Statistics</h2>
+      <section className="dashboard-section" style={{ marginBottom: 24, background: '#f6f8fa', borderRadius: 8, padding: 16, boxShadow: '0 1px 4px #eee' }}>
+        <div className="dashboard-row" style={{ display: 'flex', flexDirection: 'row', gap: 32 }}>
+          {/* Two charts side by side */}
+          <div style={{ display: 'flex', gap: 16, flexWrap: 'wrap', width: '100%' }}>
+            {/* Type Distribution */}
+            <div style={{ flex: '1 1 400px', minWidth: 300 }}>
+              <h4 style={{ fontSize: 16, fontWeight: 600, marginBottom: 12, color: '#333', textAlign: 'center' }}>Type Distribution</h4>
+              <div style={{ display: 'flex', flexDirection: 'column', gap: 12 }}>
+                {/* Stacked bar */}
+                <div style={{ display: 'flex', height: 40, borderRadius: 6, overflow: 'hidden', boxShadow: '0 2px 4px rgba(0,0,0,0.1)', border: '1px solid #ddd' }}>
+                  <div style={{ background: '#ffcdd2', width: '61%', display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#000', fontSize: 13, fontWeight: 600 }}>61%</div>
+                  <div style={{ background: '#ffe0b2', width: '25%', display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#000', fontSize: 13, fontWeight: 600 }}>25%</div>
+                  <div style={{ background: '#f8bbd0', width: '6%', display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#000', fontSize: 10, fontWeight: 600 }}>6%</div>
+                  <div style={{ background: '#b2dfdb', width: '5%', display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#000', fontSize: 10, fontWeight: 600 }}>5%</div>
+                  <div style={{ background: '#fff9c4', width: '3%', display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#000', fontSize: 9, fontWeight: 600 }}>3%</div>
+                </div>
+                {/* Legend */}
+                <div style={{ display: 'flex', flexWrap: 'wrap', gap: 12, justifyContent: 'center' }}>
+                  <div style={{ display: 'flex', alignItems: 'center', gap: 6 }}>
+                    <div style={{ width: 16, height: 16, background: '#ffcdd2', borderRadius: 3, border: '1px solid #ddd' }}></div>
+                    <span style={{ fontSize: 12, fontWeight: 500 }}>Ideation (241)</span>
+                  </div>
+                  <div style={{ display: 'flex', alignItems: 'center', gap: 6 }}>
+                    <div style={{ width: 16, height: 16, background: '#ffe0b2', borderRadius: 3, border: '1px solid #ddd' }}></div>
+                    <span style={{ fontSize: 12, fontWeight: 500 }}>Behavior (100)</span>
+                  </div>
+                  <div style={{ display: 'flex', alignItems: 'center', gap: 6 }}>
+                    <div style={{ width: 16, height: 16, background: '#f8bbd0', borderRadius: 3, border: '1px solid #ddd' }}></div>
+                    <span style={{ fontSize: 12, fontWeight: 500 }}>Attempt (23)</span>
+                  </div>
+                  <div style={{ display: 'flex', alignItems: 'center', gap: 6 }}>
+                    <div style={{ width: 16, height: 16, background: '#b2dfdb', borderRadius: 3, border: '1px solid #ddd' }}></div>
+                    <span style={{ fontSize: 12, fontWeight: 500 }}>Support (19)</span>
+                  </div>
+                  <div style={{ display: 'flex', alignItems: 'center', gap: 6 }}>
+                    <div style={{ width: 16, height: 16, background: '#fff9c4', borderRadius: 3, border: '1px solid #ddd' }}></div>
+                    <span style={{ fontSize: 12, fontWeight: 500 }}>Indicator (12)</span>
+                  </div>
+                </div>
+              </div>
+              <div style={{ marginTop: 12, fontSize: 14, color: '#666', fontWeight: 600, textAlign: 'center' }}>
+                Total: 395 labels
+              </div>
+            </div>
+            
+            {/* Scale Distribution */}
+            <div style={{ flex: '1 1 400px', minWidth: 300 }}>
+              <h4 style={{ fontSize: 16, fontWeight: 600, marginBottom: 12, color: '#333', textAlign: 'center' }}>Scale Distribution</h4>
+              <div style={{ display: 'flex', flexDirection: 'column', gap: 12 }}>
+                {/* Stacked bar */}
+                <div style={{ display: 'flex', height: 40, borderRadius: 6, overflow: 'hidden', boxShadow: '0 2px 4px rgba(0,0,0,0.1)', border: '1px solid #ddd' }}>
+                  <div style={{ background: '#ffe0b2', width: '43%', display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#000', fontSize: 13, fontWeight: 600 }}>43%</div>
+                  <div style={{ background: '#bbdefb', width: '36%', display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#000', fontSize: 13, fontWeight: 600 }}>36%</div>
+                  <div style={{ background: '#ffcdd2', width: '14%', display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#000', fontSize: 11, fontWeight: 600 }}>14%</div>
+                  <div style={{ background: '#b2dfdb', width: '7%', display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#000', fontSize: 10, fontWeight: 600 }}>7%</div>
+                </div>
+                {/* Legend */}
+                <div style={{ display: 'flex', flexWrap: 'wrap', gap: 12, justifyContent: 'center' }}>
+                  <div style={{ display: 'flex', alignItems: 'center', gap: 6 }}>
+                    <div style={{ width: 16, height: 16, background: '#ffe0b2', borderRadius: 3, border: '1px solid #ddd' }}></div>
+                    <span style={{ fontSize: 12, fontWeight: 500 }}>Moderate (144)</span>
+                  </div>
+                  <div style={{ display: 'flex', alignItems: 'center', gap: 6 }}>
+                    <div style={{ width: 16, height: 16, background: '#bbdefb', borderRadius: 3, border: '1px solid #ddd' }}></div>
+                    <span style={{ fontSize: 12, fontWeight: 500 }}>Minor (121)</span>
+                  </div>
+                  <div style={{ display: 'flex', alignItems: 'center', gap: 6 }}>
+                    <div style={{ width: 16, height: 16, background: '#ffcdd2', borderRadius: 3, border: '1px solid #ddd' }}></div>
+                    <span style={{ fontSize: 12, fontWeight: 500 }}>Severe (45)</span>
+                  </div>
+                  <div style={{ display: 'flex', alignItems: 'center', gap: 6 }}>
+                    <div style={{ width: 16, height: 16, background: '#b2dfdb', borderRadius: 3, border: '1px solid #ddd' }}></div>
+                    <span style={{ fontSize: 12, fontWeight: 500 }}>No (23)</span>
+                  </div>
+                </div>
+              </div>
+              <div style={{ marginTop: 12, fontSize: 14, color: '#666', fontWeight: 600, textAlign: 'center' }}>
+                Total: 333 labels
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
       
+      <section>
       <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
         <h2 style={{ margin: '18px 0 10px 0', fontWeight: 600, fontSize: 20, letterSpacing: '0.01em' }}>Timeline</h2>
         <a href="/progress" style={{ color: '#1976d2', textDecoration: 'none', fontSize: 14, fontWeight: 500 }}>
@@ -332,6 +428,8 @@ export default function Home() {
           Report on the Competition Results
         </li>
       </ul>
+      </section>
+      
       {/* Acknowledgement Subsection */}
       <h2 style={{ margin: '18px 0 10px 0', fontWeight: 600, fontSize: 20, letterSpacing: '0.01em' }}>Acknowledgement</h2>
       <section style={{ background: '#f6f8fa', borderRadius: 8, padding: '8px 16px 16px 16px', boxShadow: '0 1px 4px #eee', marginBottom: 24 }}>

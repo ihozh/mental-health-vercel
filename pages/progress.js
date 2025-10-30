@@ -17,6 +17,11 @@ export default function ProjectProgress() {
   const projectLogs = [
     {
       date: '2025-10-30',
+      title: 'Complete API v1.0',
+      description: 'Fetch dataset for credentialed users',
+    },
+    {
+      date: '2025-10-26',
       title: 'Data Labeling Completed',
     },
     {
@@ -150,6 +155,12 @@ export default function ProjectProgress() {
             Progress
           </button>
           <button
+            style={{ marginRight: 16, padding: '8px 18px', fontSize: 16, background: '#fff', color: '#ce181e', border: 'none', borderRadius: 6, cursor: 'pointer', fontWeight: 600, boxShadow: '0 1px 4px #bdbdbd' }}
+            onClick={() => router.push('/dataset')}
+          >
+            Dataset
+          </button>
+          <button
             style={{ padding: '8px 18px', fontSize: 16, background: '#fff', color: '#ce181e', border: 'none', borderRadius: 6, cursor: 'pointer', fontWeight: 600, boxShadow: '0 1px 4px #bdbdbd' }}
             onClick={() => window.location.href = '/login'}
           >
@@ -175,6 +186,9 @@ export default function ProjectProgress() {
             </button>
             <button className="mobile-menu-button" onClick={() => router.push('/progress')}>
               Progress
+            </button>
+            <button className="mobile-menu-button" onClick={() => router.push('/dataset')}>
+              Dataset
             </button>
             <button className="mobile-menu-button" onClick={() => window.location.href = '/login'}>
               Login
