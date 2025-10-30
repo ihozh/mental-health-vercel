@@ -17,11 +17,12 @@ export default function ProjectProgress() {
   const projectLogs = [
     {
       date: '2025-10-30',
-      title: 'Data labeling completed',
+      title: 'Data Labeling Completed',
     },
     {
       date: '2025-09-28',
-      title: 'We started monitoring autism, ADHD, and PTSD-related social posts',
+      title: 'Data Collection Expanded',
+      description: 'We started monitoring autism, ADHD, and PTSD-related social posts',
     },
     {
       date: '2025-08-28',
