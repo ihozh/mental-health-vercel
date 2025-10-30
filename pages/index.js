@@ -2,6 +2,7 @@
 //   return <div>Hello from index.js</div>
 // }
 import React, { useState, useEffect } from 'react';
+import Head from 'next/head';
 import Chart from '../components/Chart';
 
 // Helper: filter per-hour data to only the last 24 hours using system time
@@ -59,6 +60,9 @@ export default function Home() {
 
   return (
     <>
+      <Head>
+        <title>Mental Health Dashboard</title>
+      </Head>
       {/* Top Bar with Login Button */}
       <style>{`
         html, body {
