@@ -303,7 +303,7 @@ export default function Home() {
         <li style={{ marginBottom: 8, display: 'flex', alignItems: 'center' }}>
           <span style={{ marginRight: 8 }}>•</span>
           <b>Data Labeling</b>
-          <span style={{ background: '#1976d2', color: '#fff', borderRadius: 6, padding: '2px 8px', fontSize: 12, marginLeft: 8 }}>Ongoing</span>
+          <span style={{ background: '#4caf50', color: '#fff', borderRadius: 6, padding: '2px 8px', fontSize: 12, marginLeft: 8 }}>Completed</span>
         </li>
         <li style={{ marginBottom: 8, display: 'flex', alignItems: 'center' }}>
           <span style={{ marginRight: 8 }}>•</span>
@@ -312,7 +312,8 @@ export default function Home() {
         </li>
         <li style={{ marginBottom: 8, display: 'flex', alignItems: 'center' }}>
           <span style={{ marginRight: 8 }}>•</span>
-          First Report on the Data and Model
+          <b>First Report on the Data and Model</b>
+          <span style={{ background: '#1976d2', color: '#fff', borderRadius: 6, padding: '2px 8px', fontSize: 12, marginLeft: 8 }}>Ongoing</span>
         </li>
         <li style={{ marginBottom: 8, display: 'flex', alignItems: 'center' }}>
           <span style={{ marginRight: 8 }}>•</span>
