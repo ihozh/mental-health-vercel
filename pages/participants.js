@@ -16,7 +16,12 @@ export default function Participants() {
     {
       name: 'Kaiying Han',
       affiliation: 'University of Louisiana at Lafayette',
-      role: 'Staff'
+      role: 'Research Software Architect'
+    },
+    {
+      name: 'Yihe Zhang',
+      affiliation: 'University of Louisiana at Lafayette',
+      role: 'Research Scientist'
     },
     {
       name: 'Vijay Srinivas Tida',
