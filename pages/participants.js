@@ -83,6 +83,12 @@ export default function Participants() {
         <div className="desktop-nav" style={{ marginRight: 32 }}>
           <button
             style={{ marginRight: 16, padding: '8px 18px', fontSize: 16, background: '#fff', color: '#ce181e', border: 'none', borderRadius: 6, cursor: 'pointer', fontWeight: 600, boxShadow: '0 1px 4px #bdbdbd' }}
+            onClick={() => router.push('/benchmark')}
+          >
+            Benchmark
+          </button>
+          <button
+            style={{ marginRight: 16, padding: '8px 18px', fontSize: 16, background: '#fff', color: '#ce181e', border: 'none', borderRadius: 6, cursor: 'pointer', fontWeight: 600, boxShadow: '0 1px 4px #bdbdbd' }}
             onClick={() => router.push('/participants')}
           >
             Participants
@@ -98,6 +104,12 @@ export default function Participants() {
             onClick={() => router.push('/dataset')}
           >
             Dataset
+          </button>
+          <button
+            style={{ marginRight: 16, padding: '8px 18px', fontSize: 16, background: '#fff', color: '#ce181e', border: 'none', borderRadius: 6, cursor: 'pointer', fontWeight: 600, boxShadow: '0 1px 4px #bdbdbd' }}
+            onClick={() => router.push('/publication')}
+          >
+            Publication
           </button>
           <button
             style={{ padding: '8px 18px', fontSize: 16, background: '#fff', color: '#ce181e', border: 'none', borderRadius: 6, cursor: 'pointer', fontWeight: 600, boxShadow: '0 1px 4px #bdbdbd' }}
@@ -120,6 +132,9 @@ export default function Participants() {
         {/* Mobile Menu Dropdown */}
         {mobileMenuOpen && (
           <div className="mobile-menu">
+            <button className="mobile-menu-button" onClick={() => router.push('/benchmark')}>
+              Benchmark
+            </button>
             <button className="mobile-menu-button" onClick={() => router.push('/participants')}>
               Participants
             </button>
@@ -128,6 +143,9 @@ export default function Participants() {
             </button>
             <button className="mobile-menu-button" onClick={() => router.push('/dataset')}>
               Dataset
+            </button>
+            <button className="mobile-menu-button" onClick={() => router.push('/publication')}>
+              Publication
             </button>
             <button className="mobile-menu-button" onClick={() => router.push('/login')}>
               Login

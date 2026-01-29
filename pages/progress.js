@@ -16,6 +16,16 @@ export default function ProjectProgress() {
   // Project logs with dates - only showing completed or ongoing items in reverse chronological order (newest first)
   const projectLogs = [
     {
+      date: '2026-01-29',
+      title: 'Benchmark Release (January 2026)',
+      description: 'Initial release of the LLM benchmark featuring 15 models, evaluating performance on mental health classification tasks including concern type and risk level assessment.',
+    },
+    {
+      date: '2026-01-29',
+      title: 'Paper Accepted at IEEE SoutheastCon 2026',
+      description: 'We are thrilled to announce that our paper "MHDash: An Online Platform for Benchmarking Mental Health–Aware AI Assistants" has been accepted!',
+    },
+    {
       date: '2025-10-30',
       title: 'Complete API v1.0',
       description: 'Fetch dataset for credentialed users',
@@ -144,6 +154,12 @@ export default function ProjectProgress() {
         <div className="desktop-nav" style={{ marginRight: 32 }}>
           <button
             style={{ marginRight: 16, padding: '8px 18px', fontSize: 16, background: '#fff', color: '#ce181e', border: 'none', borderRadius: 6, cursor: 'pointer', fontWeight: 600, boxShadow: '0 1px 4px #bdbdbd' }}
+            onClick={() => router.push('/benchmark')}
+          >
+            Benchmark
+          </button>
+          <button
+            style={{ marginRight: 16, padding: '8px 18px', fontSize: 16, background: '#fff', color: '#ce181e', border: 'none', borderRadius: 6, cursor: 'pointer', fontWeight: 600, boxShadow: '0 1px 4px #bdbdbd' }}
             onClick={() => router.push('/participants')}
           >
             Participants
@@ -159,6 +175,12 @@ export default function ProjectProgress() {
             onClick={() => router.push('/dataset')}
           >
             Dataset
+          </button>
+          <button
+            style={{ marginRight: 16, padding: '8px 18px', fontSize: 16, background: '#fff', color: '#ce181e', border: 'none', borderRadius: 6, cursor: 'pointer', fontWeight: 600, boxShadow: '0 1px 4px #bdbdbd' }}
+            onClick={() => router.push('/publication')}
+          >
+            Publication
           </button>
           <button
             style={{ padding: '8px 18px', fontSize: 16, background: '#fff', color: '#ce181e', border: 'none', borderRadius: 6, cursor: 'pointer', fontWeight: 600, boxShadow: '0 1px 4px #bdbdbd' }}
@@ -181,6 +203,9 @@ export default function ProjectProgress() {
         {/* Mobile Menu Dropdown */}
         {mobileMenuOpen && (
           <div className="mobile-menu">
+            <button className="mobile-menu-button" onClick={() => router.push('/benchmark')}>
+              Benchmark
+            </button>
             <button className="mobile-menu-button" onClick={() => router.push('/participants')}>
               Participants
             </button>
@@ -189,6 +214,9 @@ export default function ProjectProgress() {
             </button>
             <button className="mobile-menu-button" onClick={() => router.push('/dataset')}>
               Dataset
+            </button>
+            <button className="mobile-menu-button" onClick={() => router.push('/publication')}>
+              Publication
             </button>
             <button className="mobile-menu-button" onClick={() => window.location.href = '/login'}>
               Login

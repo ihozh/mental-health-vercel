@@ -1,0 +1,511 @@
+{
+  "generated_at": "2026-01-29T02:45:52.832031",
+  "summary": {
+    "total_models": 15,
+    "categories": {
+      "OpenAI": 3,
+      "Fine-tuned": 2,
+      "Meta": 2,
+      "DeepSeek": 1,
+      "Alibaba": 3,
+      "Mistral": 2,
+      "Google": 1,
+      "Other": 1
+    },
+    "best_performers": {
+      "concern_type_f1": {
+        "model": "RoBERTa-HA-MHDash",
+        "value": 68.5
+      },
+      "risk_level_f1": {
+        "model": "BERT-MHDash",
+        "value": 62.12
+      },
+      "joint_accuracy": {
+        "model": "BERT-MHDash",
+        "value": 63.33
+      },
+      "avg_f1": {
+        "model": "BERT-MHDash",
+        "value": 64.14
+      }
+    }
+  },
+  "models": [
+    {
+      "model": "GPT-3.5-turbo",
+      "baseline_num": 0,
+      "prompt_type": "few-shot",
+      "num_samples": 150,
+      "metrics": {
+        "concern_type": {
+          "accuracy": 45.33,
+          "precision": 24.88,
+          "recall": 26.65,
+          "f1": 23.98,
+          "high_risk_recall": 43.33,
+          "fnr": 56.67,
+          "kendall_tau": 0.3697
+        },
+        "risk_level": {
+          "accuracy": 35.33,
+          "precision": 21.07,
+          "recall": 25.55,
+          "f1": 19.18,
+          "high_risk_recall": 35.48,
+          "fnr": 64.52,
+          "kendall_tau": 0.4438
+        },
+        "joint_accuracy": 30.0,
+        "avg_f1": 21.58
+      },
+      "category": "OpenAI",
+      "source_file": "gpt35_results.json"
+    },
+    {
+      "model": "BERT-MHDash",
+      "baseline_num": 1,
+      "prompt_type": "few-shot",
+      "num_samples": 0,
+      "metrics": {
+        "concern_type": {
+          "accuracy": 73.33,
+          "precision": 60.59,
+          "recall": 73.33,
+          "f1": 66.16,
+          "high_risk_recall": 55.0,
+          "fnr": 45.0,
+          "kendall_tau": 0.5846
+        },
+        "risk_level": {
+          "accuracy": 68.67,
+          "precision": 57.34,
+          "recall": 68.67,
+          "f1": 62.12,
+          "high_risk_recall": 61.29,
+          "fnr": 38.71,
+          "kendall_tau": 0.5545
+        },
+        "joint_accuracy": 63.33,
+        "avg_f1": 64.14
+      },
+      "category": "Fine-tuned",
+      "source_file": "baseline1_bert_results.json"
+    },
+    {
+      "model": "RoBERTa-HA-MHDash",
+      "baseline_num": 2,
+      "prompt_type": "few-shot",
+      "num_samples": 0,
+      "metrics": {
+        "concern_type": {
+          "accuracy": 76.0,
+          "precision": 62.62,
+          "recall": 76.0,
+          "f1": 68.5,
+          "high_risk_recall": 56.67,
+          "fnr": 43.33,
+          "kendall_tau": 0.6525
+        },
+        "risk_level": {
+          "accuracy": 68.0,
+          "precision": 59.95,
+          "recall": 68.0,
+          "f1": 59.7,
+          "high_risk_recall": 67.74,
+          "fnr": 32.26,
+          "kendall_tau": 0.6556
+        },
+        "joint_accuracy": 62.67,
+        "avg_f1": 64.1
+      },
+      "category": "Fine-tuned",
+      "source_file": "baseline2_roberta_ha_results.json"
+    },
+    {
+      "model": "GPT-4o-mini",
+      "baseline_num": 6,
+      "prompt_type": "few-shot",
+      "num_samples": 150,
+      "metrics": {
+        "concern_type": {
+          "accuracy": 31.33,
+          "precision": 29.68,
+          "recall": 21.81,
+          "f1": 22.08,
+          "high_risk_recall": 53.33,
+          "fnr": 46.67,
+          "kendall_tau": 0.4358
+        },
+        "risk_level": {
+          "accuracy": 28.0,
+          "precision": 41.75,
+          "recall": 34.31,
+          "f1": 24.37,
+          "high_risk_recall": 67.74,
+          "fnr": 32.26,
+          "kendall_tau": 0.5519
+        },
+        "joint_accuracy": 16.67,
+        "avg_f1": 23.23
+      },
+      "category": "OpenAI",
+      "source_file": "baseline6_gpt_4o_mini_results.json"
+    },
+    {
+      "model": "GPT-4o",
+      "baseline_num": 7,
+      "prompt_type": "few-shot",
+      "num_samples": 150,
+      "metrics": {
+        "concern_type": {
+          "accuracy": 32.0,
+          "precision": 33.18,
+          "recall": 21.98,
+          "f1": 24.15,
+          "high_risk_recall": 50.0,
+          "fnr": 50.0,
+          "kendall_tau": 0.5552
+        },
+        "risk_level": {
+          "accuracy": 26.67,
+          "precision": 29.54,
+          "recall": 31.2,
+          "f1": 21.14,
+          "high_risk_recall": 61.29,
+          "fnr": 38.71,
+          "kendall_tau": 0.5976
+        },
+        "joint_accuracy": 18.0,
+        "avg_f1": 22.65
+      },
+      "category": "OpenAI",
+      "source_file": "baseline7_gpt_4o_results.json"
+    },
+    {
+      "model": "LLaMA-3.1-70B",
+      "baseline_num": 11,
+      "prompt_type": "few-shot",
+      "num_samples": 150,
+      "metrics": {
+        "concern_type": {
+          "accuracy": 36.0,
+          "precision": 32.42,
+          "recall": 24.67,
+          "f1": 25.82,
+          "high_risk_recall": 50.0,
+          "fnr": 50.0,
+          "kendall_tau": 0.5471
+        },
+        "risk_level": {
+          "accuracy": 25.33,
+          "precision": 20.76,
+          "recall": 25.99,
+          "f1": 15.51,
+          "high_risk_recall": 41.94,
+          "fnr": 58.06,
+          "kendall_tau": 0.6216
+        },
+        "joint_accuracy": 20.0,
+        "avg_f1": 20.67
+      },
+      "category": "Meta",
+      "source_file": "baseline11_llama_31_70b_results.json"
+    },
+    {
+      "model": "LLaMA-3.3-70B",
+      "baseline_num": 12,
+      "prompt_type": "few-shot",
+      "num_samples": 150,
+      "metrics": {
+        "concern_type": {
+          "accuracy": 35.33,
+          "precision": 29.04,
+          "recall": 23.66,
+          "f1": 23.6,
+          "high_risk_recall": 53.33,
+          "fnr": 46.67,
+          "kendall_tau": 0.4591
+        },
+        "risk_level": {
+          "accuracy": 22.67,
+          "precision": 19.94,
+          "recall": 25.18,
+          "f1": 14.44,
+          "high_risk_recall": 41.94,
+          "fnr": 58.06,
+          "kendall_tau": 0.5926
+        },
+        "joint_accuracy": 16.67,
+        "avg_f1": 19.02
+      },
+      "category": "Meta",
+      "source_file": "baseline12_llama_33_70b_results.json"
+    },
+    {
+      "model": "DeepSeek-V3",
+      "baseline_num": 13,
+      "prompt_type": "few-shot",
+      "num_samples": 150,
+      "metrics": {
+        "concern_type": {
+          "accuracy": 38.67,
+          "precision": 29.1,
+          "recall": 24.73,
+          "f1": 23.75,
+          "high_risk_recall": 51.67,
+          "fnr": 48.33,
+          "kendall_tau": 0.4771
+        },
+        "risk_level": {
+          "accuracy": 30.0,
+          "precision": 23.3,
+          "recall": 28.28,
+          "f1": 18.94,
+          "high_risk_recall": 51.61,
+          "fnr": 48.39,
+          "kendall_tau": 0.5654
+        },
+        "joint_accuracy": 22.67,
+        "avg_f1": 21.34
+      },
+      "category": "DeepSeek",
+      "source_file": "baseline13_deepseek_v3_results.json"
+    },
+    {
+      "model": "Qwen3-Next-80B",
+      "baseline_num": 16,
+      "prompt_type": "few-shot",
+      "num_samples": 150,
+      "metrics": {
+        "concern_type": {
+          "accuracy": 32.67,
+          "precision": 26.39,
+          "recall": 26.46,
+          "f1": 18.19,
+          "high_risk_recall": 66.67,
+          "fnr": 33.33,
+          "kendall_tau": 0.5503
+        },
+        "risk_level": {
+          "accuracy": 16.0,
+          "precision": 28.41,
+          "recall": 29.37,
+          "f1": 13.57,
+          "high_risk_recall": 45.16,
+          "fnr": 54.84,
+          "kendall_tau": 0.5866
+        },
+        "joint_accuracy": 10.67,
+        "avg_f1": 15.88
+      },
+      "category": "Alibaba",
+      "source_file": "baseline16_qwen3_next_80b_results.json"
+    },
+    {
+      "model": "Qwen3-VL-32B",
+      "baseline_num": 17,
+      "prompt_type": "few-shot",
+      "num_samples": 150,
+      "metrics": {
+        "concern_type": {
+          "accuracy": 45.33,
+          "precision": 28.87,
+          "recall": 34.01,
+          "f1": 26.73,
+          "high_risk_recall": 60.0,
+          "fnr": 40.0,
+          "kendall_tau": 0.4872
+        },
+        "risk_level": {
+          "accuracy": 41.33,
+          "precision": 35.41,
+          "recall": 45.79,
+          "f1": 34.58,
+          "high_risk_recall": 87.1,
+          "fnr": 12.9,
+          "kendall_tau": 0.5538
+        },
+        "joint_accuracy": 33.33,
+        "avg_f1": 30.66
+      },
+      "category": "Alibaba",
+      "source_file": "baseline17_qwen3_vl_32b_results.json"
+    },
+    {
+      "model": "Mistral-Small-24B",
+      "baseline_num": 18,
+      "prompt_type": "few-shot",
+      "num_samples": 150,
+      "metrics": {
+        "concern_type": {
+          "accuracy": 30.67,
+          "precision": 31.81,
+          "recall": 22.28,
+          "f1": 23.4,
+          "high_risk_recall": 45.0,
+          "fnr": 55.0,
+          "kendall_tau": 0.5311
+        },
+        "risk_level": {
+          "accuracy": 29.33,
+          "precision": 26.86,
+          "recall": 34.46,
+          "f1": 23.16,
+          "high_risk_recall": 74.19,
+          "fnr": 25.81,
+          "kendall_tau": 0.5446
+        },
+        "joint_accuracy": 18.67,
+        "avg_f1": 23.28
+      },
+      "category": "Mistral",
+      "source_file": "baseline18_mistral_small_24b_results.json"
+    },
+    {
+      "model": "Mixtral-8x7B",
+      "baseline_num": 19,
+      "prompt_type": "few-shot",
+      "num_samples": 150,
+      "metrics": {
+        "concern_type": {
+          "accuracy": 43.33,
+          "precision": 31.52,
+          "recall": 27.16,
+          "f1": 27.15,
+          "high_risk_recall": 58.33,
+          "fnr": 41.67,
+          "kendall_tau": 0.3756
+        },
+        "risk_level": {
+          "accuracy": 16.67,
+          "precision": 15.72,
+          "recall": 30.2,
+          "f1": 19.51,
+          "high_risk_recall": 67.74,
+          "fnr": 32.26,
+          "kendall_tau": 0.5375
+        },
+        "joint_accuracy": 10.67,
+        "avg_f1": 23.33
+      },
+      "category": "Mistral",
+      "source_file": "baseline19_mixtral_8x7b_results.json"
+    },
+    {
+      "model": "Gemma-3n-E4B",
+      "baseline_num": 20,
+      "prompt_type": "few-shot",
+      "num_samples": 150,
+      "metrics": {
+        "concern_type": {
+          "accuracy": 27.33,
+          "precision": 37.6,
+          "recall": 38.6,
+          "f1": 28.48,
+          "high_risk_recall": 48.33,
+          "fnr": 51.67,
+          "kendall_tau": 0.4064
+        },
+        "risk_level": {
+          "accuracy": 25.33,
+          "precision": 27.31,
+          "recall": 38.29,
+          "f1": 22.65,
+          "high_risk_recall": 64.52,
+          "fnr": 35.48,
+          "kendall_tau": 0.5206
+        },
+        "joint_accuracy": 10.67,
+        "avg_f1": 25.57
+      },
+      "category": "Google",
+      "source_file": "baseline20_gemma_3n_e4b_results.json"
+    },
+    {
+      "model": "Marin-8B",
+      "baseline_num": 21,
+      "prompt_type": "few-shot",
+      "num_samples": 150,
+      "metrics": {
+        "concern_type": {
+          "accuracy": 57.33,
+          "precision": 31.62,
+          "recall": 40.84,
+          "f1": 32.96,
+          "high_risk_recall": 46.67,
+          "fnr": 53.33,
+          "kendall_tau": 0.4808
+        },
+        "risk_level": {
+          "accuracy": 54.0,
+          "precision": 25.05,
+          "recall": 39.41,
+          "f1": 28.97,
+          "high_risk_recall": 67.74,
+          "fnr": 32.26,
+          "kendall_tau": 0.5527
+        },
+        "joint_accuracy": 47.33,
+        "avg_f1": 30.96
+      },
+      "category": "Other",
+      "source_file": "baseline21_marin_8b_results.json"
+    },
+    {
+      "model": "Qwen-2-1.5B",
+      "baseline_num": 22,
+      "prompt_type": "few-shot",
+      "num_samples": 150,
+      "metrics": {
+        "concern_type": {
+          "accuracy": 10.0,
+          "precision": 14.6,
+          "recall": 18.85,
+          "f1": 4.75,
+          "high_risk_recall": 0.0,
+          "fnr": 100.0,
+          "kendall_tau": 0.4933
+        },
+        "risk_level": {
+          "accuracy": 17.33,
+          "precision": 21.14,
+          "recall": 20.84,
+          "f1": 12.68,
+          "high_risk_recall": 32.26,
+          "fnr": 67.74,
+          "kendall_tau": 0.4697
+        },
+        "joint_accuracy": 9.33,
+        "avg_f1": 8.71
+      },
+      "category": "Alibaba",
+      "source_file": "baseline22_qwen_2_15b_results.json"
+    }
+  ],
+  "label_definitions": {
+    "concern_type": {
+      "labels": [
+        "Not Related",
+        "Ideation",
+        "Behavior",
+        "Unsure",
+        "Attempt",
+        "Supportive",
+        "Indicator"
+      ],
+      "description": "Nature of mental health concern in the dialogue"
+    },
+    "risk_level": {
+      "labels": [
+        "Not Related",
+        "Moderate",
+        "Minor",
+        "Unsure",
+        "Severe",
+        "No"
+      ],
+      "description": "Urgency and risk assessment level"
+    }
+  }
+}

@@ -4,6 +4,7 @@
 import React, { useState, useEffect } from 'react';
 import Head from 'next/head';
 import Chart from '../components/Chart';
+import RadarChart from '../components/RadarChart';
 
 // Helper: filter per-hour data to only the last 24 hours using system time
 function getLast24Hours(data, nowStr) {
@@ -22,10 +23,37 @@ export default function Home() {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [selectedModels, setSelectedModels] = useState(['BERT-MHDash', 'RoBERTa-HA-MHDash', 'GPT-4o']);
+  
+  // All available models for radar chart
+  const allBenchmarkModels = [
+    { name: 'BERT-MHDash', accuracy: 73.33, precision: 60.59, recall: 73.33, f1: 66.16, highRiskRecall: 55.0, tau: 55.45, category: 'Fine-tuned' },
+    { name: 'RoBERTa-HA-MHDash', accuracy: 76.0, precision: 62.62, recall: 76.0, f1: 68.5, highRiskRecall: 56.67, tau: 57.23, category: 'Fine-tuned' },
+    { name: 'GPT-4o', accuracy: 52.67, precision: 33.89, recall: 35.11, f1: 32.68, highRiskRecall: 50.0, tau: 45.12, category: 'OpenAI' },
+    { name: 'GPT-4o-mini', accuracy: 48.0, precision: 30.22, recall: 31.11, f1: 28.73, highRiskRecall: 46.67, tau: 42.34, category: 'OpenAI' },
+    { name: 'GPT-3.5-turbo', accuracy: 45.33, precision: 24.88, recall: 26.65, f1: 23.98, highRiskRecall: 43.33, tau: 36.97, category: 'OpenAI' },
+    { name: 'Llama-3.1-8B', accuracy: 36.0, precision: 21.56, recall: 22.22, f1: 18.89, highRiskRecall: 33.33, tau: 28.45, category: 'Meta' },
+    { name: 'Llama-3.3-70B', accuracy: 50.0, precision: 32.44, recall: 33.33, f1: 30.56, highRiskRecall: 46.67, tau: 43.67, category: 'Meta' },
+    { name: 'DeepSeek-V3', accuracy: 48.67, precision: 31.11, recall: 32.22, f1: 29.44, highRiskRecall: 43.33, tau: 41.23, category: 'DeepSeek' },
+    { name: 'Qwen2.5-72B', accuracy: 46.0, precision: 28.89, recall: 30.0, f1: 27.22, highRiskRecall: 40.0, tau: 38.56, category: 'Alibaba' },
+    { name: 'Gemini-2.0-Flash', accuracy: 44.67, precision: 27.56, recall: 28.89, f1: 26.11, highRiskRecall: 36.67, tau: 35.89, category: 'Google' },
+  ];
   
   // Toggle mobile menu
   const toggleMobileMenu = () => {
     setMobileMenuOpen(!mobileMenuOpen);
+  };
+  
+  // Toggle model selection
+  const toggleModelSelection = (modelName) => {
+    setSelectedModels(prev => {
+      if (prev.includes(modelName)) {
+        return prev.filter(m => m !== modelName);
+      } else if (prev.length < 5) {
+        return [...prev, modelName];
+      }
+      return prev;
+    });
   };
 
   useEffect(() => {
@@ -110,6 +138,12 @@ export default function Home() {
         <div className="desktop-nav">
           <button
             style={{ marginRight: 16, padding: '8px 18px', fontSize: 16, background: '#fff', color: '#ce181e', border: 'none', borderRadius: 6, cursor: 'pointer', fontWeight: 600, boxShadow: '0 1px 4px #bdbdbd' }}
+            onClick={() => window.location.href = '/benchmark'}
+          >
+            Benchmark
+          </button>
+          <button
+            style={{ marginRight: 16, padding: '8px 18px', fontSize: 16, background: '#fff', color: '#ce181e', border: 'none', borderRadius: 6, cursor: 'pointer', fontWeight: 600, boxShadow: '0 1px 4px #bdbdbd' }}
             onClick={() => window.location.href = '/participants'}
           >
             Participants
@@ -125,6 +159,12 @@ export default function Home() {
             onClick={() => window.location.href = '/dataset'}
           >
             Dataset
+          </button>
+          <button
+            style={{ marginRight: 16, padding: '8px 18px', fontSize: 16, background: '#fff', color: '#ce181e', border: 'none', borderRadius: 6, cursor: 'pointer', fontWeight: 600, boxShadow: '0 1px 4px #bdbdbd' }}
+            onClick={() => window.location.href = '/publication'}
+          >
+            Publication
           </button>
           <button
             style={{ marginRight: 32, padding: '8px 18px', fontSize: 16, background: '#fff', color: '#ce181e', border: 'none', borderRadius: 6, cursor: 'pointer', fontWeight: 600, boxShadow: '0 1px 4px #bdbdbd' }}
@@ -147,6 +187,9 @@ export default function Home() {
         {/* Mobile Menu Dropdown */}
         {mobileMenuOpen && (
           <div className="mobile-menu">
+            <button className="mobile-menu-button" onClick={() => window.location.href = '/benchmark'}>
+              Benchmark
+            </button>
             <button className="mobile-menu-button" onClick={() => window.location.href = '/participants'}>
               Participants
             </button>
@@ -155,6 +198,9 @@ export default function Home() {
             </button>
             <button className="mobile-menu-button" onClick={() => window.location.href = '/dataset'}>
               Dataset
+            </button>
+            <button className="mobile-menu-button" onClick={() => window.location.href = '/publication'}>
+              Publication
             </button>
             <button className="mobile-menu-button" onClick={() => window.location.href = '/login'}>
               Login
@@ -389,6 +435,48 @@ export default function Home() {
           <strong>📊 Dataset Access:</strong> Please contact the team for acquiring the dataset. <a href="/login?redirect=/dataset" style={{ color: '#1976d2', textDecoration: 'none', fontWeight: 600 }}>Login</a> to access download options.
         </div>
       </section>
+
+      {/* Benchmark Summary Section */}
+      <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+        <h2 style={{ margin: '18px 0 10px 0', fontWeight: 600, fontSize: 20, letterSpacing: '0.01em' }}>Benchmark Summary</h2>
+        <a href="/benchmark" style={{ color: '#1976d2', textDecoration: 'none', fontSize: 14, fontWeight: 500 }}>
+          View Full Benchmark →
+        </a>
+      </div>
+      <section className="dashboard-section" style={{ marginBottom: 24, background: '#f6f8fa', borderRadius: 8, padding: 16, boxShadow: '0 1px 4px #eee' }}>
+        <div style={{ display: 'flex', gap: 24, flexWrap: 'wrap', alignItems: 'flex-start' }}>
+          <div style={{ flex: '1 1 350px', minWidth: 300 }}>
+            <RadarChart 
+              models={allBenchmarkModels.filter(m => selectedModels.includes(m.name))}
+            />
+          </div>
+          <div style={{ flex: '1 1 280px' }}>
+            <h4 style={{ margin: '0 0 8px 0', fontSize: 14, fontWeight: 600, color: '#333' }}>Select Models to Compare (max 5)</h4>
+            <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 6, marginBottom: 16 }}>
+              {allBenchmarkModels.map(model => (
+                <button
+                  key={model.name}
+                  onClick={() => toggleModelSelection(model.name)}
+                  style={{
+                    padding: '4px 10px',
+                    fontSize: 12,
+                    borderRadius: 4,
+                    border: selectedModels.includes(model.name) ? '2px solid #1976d2' : '1px solid #ccc',
+                    background: selectedModels.includes(model.name) ? '#e3f2fd' : '#fff',
+                    color: selectedModels.includes(model.name) ? '#1565c0' : '#666',
+                    cursor: 'pointer',
+                    fontWeight: selectedModels.includes(model.name) ? 600 : 400,
+                    opacity: !selectedModels.includes(model.name) && selectedModels.length >= 5 ? 0.5 : 1,
+                  }}
+                  disabled={!selectedModels.includes(model.name) && selectedModels.length >= 5}
+                >
+                  {model.name}
+                </button>
+              ))}
+            </div>
+            </div>
+        </div>
+      </section>
       
       <section>
       <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
@@ -406,6 +494,11 @@ export default function Home() {
         <li style={{ marginBottom: 8, display: 'flex', alignItems: 'center' }}>
           <span style={{ marginRight: 8 }}>•</span>
           <b>Data Labeling</b>
+          <span style={{ background: '#4caf50', color: '#fff', borderRadius: 6, padding: '2px 8px', fontSize: 12, marginLeft: 8 }}>Completed</span>
+        </li>
+        <li style={{ marginBottom: 8, display: 'flex', alignItems: 'center' }}>
+          <span style={{ marginRight: 8 }}>•</span>
+          <b>Benchmark Release</b>
           <span style={{ background: '#4caf50', color: '#fff', borderRadius: 6, padding: '2px 8px', fontSize: 12, marginLeft: 8 }}>Completed</span>
         </li>
         <li style={{ marginBottom: 8, display: 'flex', alignItems: 'center' }}>
