@@ -151,8 +151,16 @@ export default function Publication() {
             <div style={{ fontSize: 14, color: '#333', marginBottom: 4 }}>
               Yihe Zhang, Cheyenne N Mohawk, Kaiying Han, Vijay Srinivas Tida, Manyu Li, Xiali Hei
             </div>
-            <div style={{ fontSize: 14, color: '#666' }}>
+            <div style={{ fontSize: 14, color: '#666', marginBottom: 8 }}>
               In SoutheastCon, IEEE, 2026
+            </div>
+            <div style={{ display: 'flex', gap: 12, flexWrap: 'wrap' }}>
+              <a href="https://huggingface.co/datasets/IkeZhang/MHDialog" target="_blank" rel="noopener noreferrer" style={{ fontSize: 14, color: '#1976d2', textDecoration: 'none' }}>
+                📊 Dataset
+              </a>
+              <a href="https://arxiv.org/abs/2602.00353" target="_blank" rel="noopener noreferrer" style={{ fontSize: 14, color: '#1976d2', textDecoration: 'none' }}>
+                📄 Paper
+              </a>
             </div>
           </div>
         </div>
