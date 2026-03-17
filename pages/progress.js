@@ -6,6 +6,11 @@ const url = 'https://mhdash.socialshields.org';
 
 const projectLogs = [
   {
+    date: '2026-03-14',
+    title: 'Presented at IEEE SoutheastCon 2026',
+    description: 'Presented MHDash work at IEEE SoutheastCon 2026 in Huntsville, Alabama.',
+  },
+  {
     date: '2026-01-29',
     title: 'Benchmark Release (January 2026)',
     description: 'Initial release of the LLM benchmark featuring 15 models, evaluating performance on mental health classification tasks including concern type and risk level assessment.',
