@@ -27,7 +27,7 @@ export default function Publication() {
               MHDash: An Online Platform for Benchmarking Mental Health–Aware AI Assistants
             </div>
             <div style={{ fontSize: 14, color: '#1a1a1a', marginBottom: 4 }}>
-              Yihe Zhang, Cheyenne N Mohawk, Kaiying Han, Vijay Srinivas Tida, Manyu Li, Xiali Hei
+              Yihe Zhang, Finn Mohawk, Kaiying Han, Vijay Srinivas Tida, Manyu Li, Xiali Hei
             </div>
             <div style={{ fontSize: 14, color: '#595959', marginBottom: 8 }}>
               In SoutheastCon, IEEE, 2026
