@@ -6,9 +6,18 @@ const url = 'https://mhdash.socialshields.org';
 
 const projectLogs = [
   {
+    date: '2026-03-18',
+    title: 'Participating in CLPsych 2026 Shared Task',
+    description: 'We are participating in the CLPsych 2026 Shared Task.',
+    link: 'https://clpsych.org/shared-task/',
+    linkText: 'CLPsych 2026 Shared Task',
+  },
+  {
     date: '2026-03-14',
     title: 'Presented at IEEE SoutheastCon 2026',
     description: 'Presented MHDash work at IEEE SoutheastCon 2026 in Huntsville, Alabama.',
+    link: 'https://ieeesoutheastcon.org/',
+    linkText: 'IEEE SoutheastCon',
   },
   {
     date: '2026-01-29',
