@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 520 160" width="520" height="160">
+
+  <!-- Icon: circle -->
+  <circle cx="80" cy="80" r="62" fill="none" stroke="#1C2848" stroke-width="5.5"/>
+
+  <!-- Left flat baseline -->
+  <path d="M18,80 L66,80" fill="none" stroke="#1C2848" stroke-width="3.2" stroke-linecap="round"/>
+
+  <!-- Main upward spike (orange) -->
+  <path d="M66,80 L72,50 L80,18 L88,50 L94,80"
+        fill="none" stroke="#E08848" stroke-width="3.2"
+        stroke-linecap="round" stroke-linejoin="round"/>
+
+  <!-- Gap, then small downward spike (orange) -->
+  <path d="M98,80 L101,80 L105,104 L109,80"
+        fill="none" stroke="#E08848" stroke-width="2.0"
+        stroke-linecap="round" stroke-linejoin="round"/>
+
+  <!-- Right flat baseline -->
+  <path d="M109,80 L142,80" fill="none" stroke="#1C2848" stroke-width="3.2" stroke-linecap="round"/>
+
+  <!-- Teal accent dot on spike tip, sitting on arc -->
+  <circle cx="80" cy="18" r="8"   fill="#2ABFBF"/>
+  <circle cx="80" cy="18" r="4.5" fill="#ffffff"/>
+
+  <!-- Wordmark -->
+  <text x="168" y="94"
+        font-family="Georgia,'Times New Roman',serif"
+        font-size="54" font-weight="700"
+        fill="#1C2848">MH</text>
+  <text x="262" y="94"
+        font-family="Georgia,'Times New Roman',serif"
+        font-size="54" font-weight="400"
+        fill="#2A4070">Dash</text>
+
+  <!-- Tagline -->
+  <text x="169" y="122"
+        font-family="-apple-system,BlinkMacSystemFont,'Helvetica Neue',sans-serif"
+        font-size="10" letter-spacing="3"
+        fill="#6B5E52">MENTAL HEALTH AI EVALUATION</text>
+
+</svg>

@@ -105,6 +105,9 @@ export default function Home() {
         .sdg-image { border-radius: 8px; box-shadow: 0 1px 4px #eee; }
       `}</style>
       <main className="dashboard-main" style={{ width: '100%', maxWidth: 900, margin: '0 auto', padding: 24, minHeight: '100vh', paddingTop: 48 }}>
+        <div style={{ marginBottom: 16 }}>
+          <img src="/mhdash_logo.svg" alt="MHDash Logo" style={{ height: 48, objectFit: 'contain' }} />
+        </div>
         <h1 className="dashboard-title" style={{ fontSize: 36, fontWeight: 'bold', marginBottom: 12, letterSpacing: '-0.5px' }}>
           Accelerating Universal Mental Health Access Through AI-Powered Suicide Prevention
         </h1>
