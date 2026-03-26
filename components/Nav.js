@@ -77,18 +77,8 @@ export default function Nav({ loggedIn = false, onLogout }) {
     <nav role="navigation" aria-label="Main navigation" style={navBarStyle}>
       {/* Site identity — always links home */}
       <div style={{ marginLeft: 16, flexShrink: 0 }}>
-        <Link
-          href="/"
-          style={{
-            color: '#fff',
-            fontWeight: 700,
-            fontSize: 18,
-            textDecoration: 'none',
-            letterSpacing: '0.3px',
-          }}
-          aria-label="MHDash — Home"
-        >
-          MHDash
+        <Link href="/" aria-label="MHDash — Home" style={{ display: 'inline-flex', alignItems: 'center' }}>
+          <img src="/mhdash_logo.svg" alt="MHDash" style={{ height: 32, objectFit: 'contain' }} />
         </Link>
       </div>
 
