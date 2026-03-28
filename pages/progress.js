@@ -10,7 +10,7 @@ const projectLogs = [
     title: 'Presented at Louisiana Impact Research Awards Summit',
     description: 'Presented the MHDash work at the Louisiana Impact Research Awards Summit.',
     link: 'https://business.louisiana.edu/sites/business/files/UL%20Lafayette%20-%20Louisiana%20Impact%20Research%20Summit%20-%20Agenda%202026%20March%20DRAFT%202603123.pdf',
-    linkText: 'Louisiana Impact Research Awards Summit Agenda',
+    linkText: 'Louisiana Impact Research Awards Summit',
   },
   {
     date: '2026-03-18',
