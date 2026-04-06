@@ -16,7 +16,7 @@ export default function PostsIndex({ posts }) {
       <style>{`
         .posts-grid {
           display: grid;
-          grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+          grid-template-columns: repeat(3, 1fr);
           gap: 20px;
         }
         .post-card {
@@ -69,7 +69,7 @@ export default function PostsIndex({ posts }) {
         }
         @media (max-width: 600px) {
           .posts-main { padding: 12px !important; padding-top: 64px !important; }
-          .posts-grid { grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); gap: 12px; }
+          .posts-grid { grid-template-columns: 1fr; gap: 12px; }
         }
       `}</style>
 

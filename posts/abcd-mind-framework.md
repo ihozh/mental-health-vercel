@@ -173,6 +173,12 @@ Future posts will show how we operationalise ABCD labels in the CLPsych shared t
 
 ---
 
+## Reference
+
+Atzil-Slonim, D. (2025). *Multimodal Intrapersonal and Interpersonal Dynamics (MIND): A Transtheoretical Coding Manual*. https://doi.org/10.17605/OSF.IO/SJE8C
+
+---
+
 ## Visualize the ABCD
 
 The interactive plot below shows keyword clusters for each ABCD sub-category across five embedding models. Use the sidebar to filter sub-categories and the toolbar to switch models or colouring modes.

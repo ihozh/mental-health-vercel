@@ -28,26 +28,32 @@ const navBarStyle = {
 };
 
 const desktopLinkStyle = {
-  padding: '8px 14px',
-  fontSize: 15,
-  background: '#fff',
-  color: '#ce181e',
-  border: 'none',
+  padding: '0 13px',
+  fontSize: 14,
+  background: 'transparent',
+  color: '#fff',
+  border: '1px solid rgba(255,255,255,0.35)',
   borderRadius: 6,
   cursor: 'pointer',
-  fontWeight: 600,
-  boxShadow: '0 1px 4px rgba(0,0,0,0.15)',
+  fontWeight: 500,
   textDecoration: 'none',
   display: 'inline-flex',
   alignItems: 'center',
   alignSelf: 'center',
-  height: 34,
-  lineHeight: 1.4,
+  height: 32,
+  lineHeight: '32px',
+  appearance: 'none',
+  WebkitAppearance: 'none',
+  boxSizing: 'border-box',
+  whiteSpace: 'nowrap',
 };
 
 const activeDesktopLinkStyle = {
   ...desktopLinkStyle,
-  boxShadow: 'inset 0 0 0 2px #ce181e',
+  background: '#fff',
+  color: '#ce181e',
+  border: '1px solid #fff',
+  fontWeight: 700,
 };
 
 /**

@@ -29,6 +29,15 @@ html, body {
 }
 
 /* ─── Navigation ─────────────────────────────────────────────────────────── */
+.desktop-nav a:hover,
+.desktop-nav button:hover {
+  background: rgba(255, 255, 255, 0.18) !important;
+  border-color: rgba(255, 255, 255, 0.6) !important;
+}
+.desktop-nav a[aria-current="page"]:hover {
+  background: #fff !important;
+}
+
 @media (max-width: 600px) {
   .desktop-nav        { display: none !important; }
   .mobile-nav-toggle  { display: flex !important; }
