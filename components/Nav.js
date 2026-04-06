@@ -4,11 +4,11 @@ import { useState } from 'react';
 
 const NAV_LINKS = [
   { href: '/benchmark',   label: 'Benchmark' },
-  { href: '/participants', label: 'Participants' },
+  { href: '/posts',       label: 'Posts' },
   { href: '/progress',    label: 'Progress' },
   { href: '/dataset',     label: 'Dataset' },
   { href: '/publication', label: 'Publication' },
-  { href: '/posts',       label: 'Posts' },
+  { href: '/participants', label: 'Participants' },
 ];
 
 const navBarStyle = {
@@ -40,7 +40,8 @@ const desktopLinkStyle = {
   textDecoration: 'none',
   display: 'inline-flex',
   alignItems: 'center',
-  minHeight: 36,
+  alignSelf: 'center',
+  height: 34,
   lineHeight: 1.4,
 };
 

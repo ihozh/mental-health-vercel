@@ -170,3 +170,15 @@ Classical mental-health NLP relies heavily on keyword lists and binary sentiment
 3. **Multi-dimensionality**: a passage can simultaneously carry affect, behavioral, cognitive, and motivational signals, enabling richer downstream tasks such as treatment matching or longitudinal change detection.
 
 Future posts will show how we operationalise ABCD labels in the CLPsych shared task and what NLP architectures best recover each dimension.
+
+---
+
+## Visualize the ABCD
+
+The interactive plot below shows keyword clusters for each ABCD sub-category across five embedding models. Use the sidebar to filter sub-categories and the toolbar to switch models or colouring modes.
+
+<iframe
+  src="/vis/keyword_clusters.html"
+  style="width:100%;height:680px;border:1px solid #e0e0e0;border-radius:8px;display:block;margin-top:16px"
+  title="ABCD Keyword Clusters"
+></iframe>

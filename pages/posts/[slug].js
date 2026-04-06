@@ -3,6 +3,7 @@ import Link from 'next/link';
 import Nav from '../../components/Nav';
 import ReactMarkdown from 'react-markdown';
 import remarkGfm from 'remark-gfm';
+import rehypeRaw from 'rehype-raw';
 import fs from 'fs';
 import path from 'path';
 import matter from 'gray-matter';
@@ -105,7 +106,7 @@ export default function PostPage({ title, date, tag, content }) {
 
         {/* Markdown body */}
         <article className="post-body">
-          <ReactMarkdown remarkPlugins={[remarkGfm]}>{content}</ReactMarkdown>
+          <ReactMarkdown remarkPlugins={[remarkGfm]} rehypePlugins={[rehypeRaw]}>{content}</ReactMarkdown>
         </article>
       </main>
     </>
