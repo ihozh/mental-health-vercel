@@ -3,6 +3,7 @@ title: "The ABCD in Multimodal Intrapersonal and Interpersonal Dynamics (MIND)"
 date: "2026-04-05"
 tag: "CLPsych"
 excerpt: "A walkthrough of the ABCD annotation framework (Affect, Behavior, Cognition, and Desire) that sits at the heart of the MIND taxonomy for analysing mental-health language."
+vizSrc: "/vis/keyword_clusters.html"
 ---
 
 ## What is ABCD?

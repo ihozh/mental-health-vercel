@@ -6,6 +6,13 @@ const url = 'https://mhdash.socialshields.org';
 
 const projectLogs = [
   {
+    date: '2026-04-06',
+    title: 'New Post: The ABCD in MIND',
+    description: 'Published a walkthrough of the ABCD annotation framework (Affect, Behavior, Cognition, Desire) with an interactive keyword cluster visualization.',
+    link: '/posts/abcd-mind-framework',
+    linkText: 'Read post',
+  },
+  {
     date: '2026-03-27',
     title: 'Presented at Louisiana Impact Research Awards Summit',
     description: 'Presented the MHDash work at the Louisiana Impact Research Awards Summit.',
