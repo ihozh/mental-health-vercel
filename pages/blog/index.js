@@ -1,15 +1,32 @@
 import Head from 'next/head';
 import Link from 'next/link';
 import Nav from '../../components/Nav';
+import { useEffect } from 'react';
 import fs from 'fs';
 import path from 'path';
 import matter from 'gray-matter';
 
 export default function PostsIndex({ posts }) {
+  useEffect(() => {
+    const BASE_W = 860;
+    function updateScales() {
+      document.querySelectorAll('.post-card-preview').forEach(wrap => {
+        const iframe = wrap.querySelector('iframe');
+        if (!iframe) return;
+        const scale = wrap.offsetWidth / BASE_W;
+        iframe.style.transform = `scale(${scale})`;
+        iframe.style.height = Math.ceil(160 / scale) + 'px';
+      });
+    }
+    updateScales();
+    window.addEventListener('resize', updateScales);
+    return () => window.removeEventListener('resize', updateScales);
+  }, []);
+
   return (
     <>
       <Head>
-        <title>Posts | MHDash</title>
+        <title>Blog | MHDash</title>
       </Head>
       <Nav />
 
@@ -48,8 +65,6 @@ export default function PostsIndex({ posts }) {
           top: 0;
           left: 0;
           width: 860px;
-          height: 520px;
-          transform: scale(0.355);
           transform-origin: top left;
           pointer-events: none;
           border: none;
@@ -122,7 +137,7 @@ export default function PostsIndex({ posts }) {
         style={{ width: '100%', maxWidth: 960, margin: '0 auto', padding: 24, paddingTop: 72, minHeight: '100vh' }}
       >
         <h1 style={{ fontSize: 24, fontWeight: 700, marginBottom: 24, color: 'var(--text)' }}>
-          Posts
+          Blog
         </h1>
 
         {posts.length === 0 ? (
@@ -130,7 +145,7 @@ export default function PostsIndex({ posts }) {
         ) : (
           <div className="posts-grid">
             {posts.map((post) => (
-              <Link key={post.slug} href={`/posts/${post.slug}`} className="post-card">
+              <Link key={post.slug} href={`/blog/${post.slug}`} className="post-card">
                 {/* Preview thumbnail */}
                 <div className="post-card-preview">
                   {post.vizSrc ? (
@@ -161,7 +176,7 @@ export default function PostsIndex({ posts }) {
 }
 
 export async function getStaticProps() {
-  const postsDir = path.join(process.cwd(), 'posts');
+  const postsDir = path.join(process.cwd(), 'blog');
   const files = fs.readdirSync(postsDir).filter((f) => f.endsWith('.md'));
 
   const posts = files

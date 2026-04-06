@@ -4,7 +4,7 @@ import { useState } from 'react';
 
 const NAV_LINKS = [
   { href: '/benchmark',   label: 'Benchmark' },
-  { href: '/posts',       label: 'Posts' },
+  { href: '/blog',        label: 'Blog' },
   { href: '/progress',    label: 'Progress' },
   { href: '/dataset',     label: 'Dataset' },
   { href: '/publication', label: 'Publication' },
@@ -94,7 +94,7 @@ export default function Nav({ loggedIn = false, onLogout }) {
       {/* Desktop nav links */}
       <div className="desktop-nav" style={{ marginRight: 24, display: 'flex', gap: 8, alignItems: 'center' }}>
         {NAV_LINKS.map(({ href, label }) => {
-          const active = router.pathname === href;
+          const active = router.pathname === href || router.pathname.startsWith(href + '/');
           return (
             <Link
               key={href}
@@ -138,7 +138,7 @@ export default function Nav({ loggedIn = false, onLogout }) {
       {open && (
         <div id="nav-mobile-menu" className="mobile-menu" role="menu">
           {NAV_LINKS.map(({ href, label }) => {
-            const active = router.pathname === href;
+            const active = router.pathname === href || router.pathname.startsWith(href + '/');
             return (
               <Link
                 key={href}

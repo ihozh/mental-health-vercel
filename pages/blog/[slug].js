@@ -81,10 +81,10 @@ export default function PostPage({ title, date, tag, content }) {
       >
         {/* Back link */}
         <Link
-          href="/posts"
+          href="/blog"
           style={{ fontSize: 13, color: 'var(--text-muted)', textDecoration: 'none', display: 'inline-flex', alignItems: 'center', gap: 4, marginBottom: 24 }}
         >
-          ← All Posts
+          ← Blog
         </Link>
 
         {/* Header */}
@@ -114,7 +114,7 @@ export default function PostPage({ title, date, tag, content }) {
 }
 
 export async function getStaticPaths() {
-  const postsDir = path.join(process.cwd(), 'posts');
+  const postsDir = path.join(process.cwd(), 'blog');
   const files = fs.readdirSync(postsDir).filter((f) => f.endsWith('.md'));
   return {
     paths: files.map((f) => ({ params: { slug: f.replace(/\.md$/, '') } })),
@@ -123,7 +123,7 @@ export async function getStaticPaths() {
 }
 
 export async function getStaticProps({ params }) {
-  const filePath = path.join(process.cwd(), 'posts', `${params.slug}.md`);
+  const filePath = path.join(process.cwd(), 'blog', `${params.slug}.md`);
   const raw = fs.readFileSync(filePath, 'utf8');
   const { data, content } = matter(raw);
   return {

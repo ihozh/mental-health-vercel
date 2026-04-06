@@ -182,7 +182,7 @@ Atzil-Slonim, D. (2025). *Multimodal Intrapersonal and Interpersonal Dynamics (M
 
 ## Visualize the ABCD
 
-The interactive plot below shows keyword clusters for each ABCD sub-category across five embedding models. Use the sidebar to filter sub-categories and the toolbar to switch models or colouring modes.
+The interactive plot below shows keyword clusters for each ABCD sub-category across Twitter-BERT model. Use the sidebar to filter sub-categories or colouring modes.
 
 <iframe
   src="/vis/keyword_clusters.html"
