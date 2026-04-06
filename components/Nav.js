@@ -8,6 +8,7 @@ const NAV_LINKS = [
   { href: '/progress',    label: 'Progress' },
   { href: '/dataset',     label: 'Dataset' },
   { href: '/publication', label: 'Publication' },
+  { href: '/posts',       label: 'Posts' },
 ];
 
 const navBarStyle = {
