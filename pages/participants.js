@@ -4,7 +4,7 @@ import Nav from '../components/Nav';
 
 const participants = [
   { name: 'Finn Mohawk',    affiliation: 'University of Louisiana at Lafayette',                  role: 'Student' },
-  { name: 'Kaiying Han',          affiliation: 'University of Louisiana at Lafayette',                  role: 'Research Software Architect' },
+  { name: 'Kaiying Han',          affiliation: 'University of Louisiana at Lafayette',                  role: 'Student' },
   { name: 'Yihe Zhang',           affiliation: 'University of Louisiana at Lafayette',                  role: 'Research Scientist' },
   { name: 'Vijay Srinivas Tida',  affiliation: "College of Saint Benedict and Saint John's University", role: 'Faculty' },
   { name: 'Manyu Li',             affiliation: 'University of Louisiana at Lafayette',                  role: 'Faculty' },
